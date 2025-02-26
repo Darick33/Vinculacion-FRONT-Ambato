@@ -1,0 +1,62 @@
+.card img {
+    height: 200px; /* Ajusta la altura según lo necesario */
+    width: 100%; /* Para que ocupe el ancho completo */
+    object-fit: contain; /* Evita el recorte de la imagen */
+    border-radius: 10px; /* Opcional: para esquinas redondeadas */
+}
+.card {
+    height: 350px; /* Aumenta la altura de la tarjeta */
+}
+
+.card img {
+    height: 250px; /* Ajusta la imagen para ocupar más espacio */
+    width: 100%; 
+    object-fit: cover; /* Evita la deformación y ajusta la imagen */
+    border-radius: 10px;
+}
+.navbar-collapse {
+    display: block !important;
+}
+.carousel-item {
+    transition: transform 1s ease;
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+  
+  .carousel-container {
+    display: flex;
+    animation: slide 8s infinite linear;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Inicio en su posición original */
+        opacity: 1; /* Imágenes visibles */
+    }
+    25% {
+        transform: translateX(-50%); /* Mueve las imágenes hacia la izquierda */
+        opacity: 1; /* Las imágenes siguen siendo visibles */
+    }
+    49% {
+        transform: translateX(-100%); /* Las imágenes siguen moviéndose hacia la izquierda */
+        opacity: 1;
+    }
+    50% {
+        opacity: 0; /* Comienza a desaparecer suavemente */
+    }
+    55% {
+        transform: translateX(100%); /* Mueve las imágenes fuera de la vista por la derecha */
+        opacity: 0; /* Se mantiene invisible mientras fuera de la vista */
+    }
+    70% {
+        opacity: 0; /* Mantiene la opacidad 0 mientras están fuera de la vista */
+    }
+    75% {
+        opacity: 1; /* Vuelven a ser visibles */
+    }
+    100% {
+        transform: translateX(0); /* Regresan a su posición inicial */
+        opacity: 1; /* Imágenes visibles de nuevo */
+    }
+}

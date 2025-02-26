@@ -30,29 +30,24 @@ export class FullComponent {
 
   sidebarMenu: sidebarMenu[] = [
     {
-      link: "/home",
+      link: "/inicio",
       icon: "home",
       menu: "Dashboard",
     },
     {
-      link: "/button",
-      icon: "disc",
-      menu: "Buttons",
+      link: "/usuarios",
+      icon: "users",
+      menu: "Usuarios",
     },
     {
-      link: "/forms",
-      icon: "layout",
-      menu: "Forms",
+      link: "/roles",
+      icon: "shield",
+      menu: "Roles",
     },
     {
       link: "/alerts",
-      icon: "info",
-      menu: "Alerts",
-    },
-    {
-      link: "/grid-list",
-      icon: "file-text",
-      menu: "Grid List",
+      icon: "alert-triangle",
+      menu: "Configuracion Inicial",
     },
     {
       link: "/menu",
@@ -60,60 +55,34 @@ export class FullComponent {
       menu: "Menus",
     },
     {
-      link: "/table",
-      icon: "grid",
-      menu: "Tables",
+      link: "/mascotas",
+      icon: "heart", // Cambié a 'heart' para representar mascotas.
+      menu: "Mascotas",
     },
     {
-      link: "/expansion",
-      icon: "divide-circle",
-      menu: "Expansion Panel",
+      link: "/eventos",
+      icon: "calendar",
+      menu: "Eventos",
     },
     {
-      link: "/chips",
-      icon: "award",
-      menu: "Chips",
+      link: "/campanias",
+      icon: "book",
+      menu: "Campañas",
     },
     {
-      link: "/tabs",
-      icon: "list",
-      menu: "Tabs",
+      link: "/denuncias",
+      icon: "alert-circle", // Cambié a 'alert-circle' para representar denuncias.
+      menu: "Denuncias",
     },
     {
-      link: "/progress",
-      icon: "bar-chart-2",
-      menu: "Progress Bar",
+      link: "/preguntasFrecuentes",
+      icon: "help-circle",
+      menu: "Preguntas Frecuentes",
     },
     {
-      link: "/toolbar",
-      icon: "voicemail",
-      menu: "Toolbar",
-    },
-    {
-      link: "/progress-snipper",
-      icon: "loader",
-      menu: "Progress Snipper",
-    },
-    {
-      link: "/tooltip",
-      icon: "bell",
-      menu: "Tooltip",
-    },
-    {
-      link: "/snackbar",
-      icon: "slack",
-      menu: "Snackbar",
-    },
-    {
-      link: "/slider",
-      icon: "sliders",
-      menu: "Slider",
-    },
-    {
-      link: "/slide-toggle",
-      icon: "layers",
-      menu: "Slide Toggle",
+      link: "/chatbot",
+      icon: "message-circle",
+      menu: "Configuracion de ChatBot",
     },
   ]
-
 }
