@@ -30,57 +30,57 @@ export class FullComponent {
 
   sidebarMenu: sidebarMenu[] = [
     {
-      link: "/inicio",
+      link: "/admin/inicio",
       icon: "home",
       menu: "Dashboard",
     },
     {
-      link: "/usuarios",
+      link: "/admin/usuarios",
       icon: "users",
       menu: "Usuarios",
     },
     {
-      link: "/roles",
+      link: "/admin/roles",
       icon: "shield",
       menu: "Roles",
     },
     {
-      link: "/alerts",
+      link: "/admin/alerts",
       icon: "alert-triangle",
       menu: "Configuracion Inicial",
     },
     {
-      link: "/menu",
+      link: "/admin/menu",
       icon: "menu",
       menu: "Menus",
     },
     {
-      link: "/mascotas",
-      icon: "heart", // Cambié a 'heart' para representar mascotas.
+      link: "/admin/mascotas",
+      icon: "heart", 
       menu: "Mascotas",
     },
     {
-      link: "/eventos",
+      link: "/admin/eventos",
       icon: "calendar",
       menu: "Eventos",
     },
     {
-      link: "/campanias",
+      link: "/admin/campanias",
       icon: "book",
       menu: "Campañas",
     },
     {
-      link: "/denuncias",
-      icon: "alert-circle", // Cambié a 'alert-circle' para representar denuncias.
+      link: "/admin/denuncias",
+      icon: "alert-circle", 
       menu: "Denuncias",
     },
     {
-      link: "/preguntasFrecuentes",
+      link: "/admin/preguntasFrecuentes",
       icon: "help-circle",
       menu: "Preguntas Frecuentes",
     },
     {
-      link: "/chatbot",
+      link: "/admin/chatbot",
       icon: "message-circle",
       menu: "Configuracion de ChatBot",
     },

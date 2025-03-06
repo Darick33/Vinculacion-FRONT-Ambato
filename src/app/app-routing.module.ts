@@ -19,11 +19,11 @@ import { ProductComponent } from './dashboard/dashboard-components/product/produ
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
-import { LandingPageComponent } from './pages copy/landing-page/landing-page.component';
-import { ProductosCampanasComponent } from './pages/productos-campanas/productos-campanas.component';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import { LandingPageComponent } from './public/landing-page/landing-page.component';
+import { ProductosCampanasComponent } from './public/productos-campanas/productos-campanas.component';
 import { FullEjemploComponent } from './layouts/fullEjemplo/full.component';
+import { LoginComponent } from './public/login/login.component';
+import { RegistroComponent } from './public/registro/registro.component';
 
 const routes: Routes = [
   {
@@ -50,43 +50,26 @@ const routes: Routes = [
       { path: 'button', component: ButtonsComponent },
     ]
   },
+  // {
+  //   path: '',
+  //   component: FullComponent,
+  //   children: [
+  //     { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  //     { path: 'inicio', component: DashboardComponent },
+  //   ]
+  // },
   {
-    path: '',
-    component: FullComponent,
-    children: [
-      { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-      { path: 'inicio', component: DashboardComponent },
-    ]
+    path: 'public',
+    loadChildren: () =>
+      import('./public/public.module').then((m) => m.PublicModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
   },
 
-  {
-    path: 'landing',
-    component: BlankComponent,
-    children: [
-      { path: '', component: LandingPageComponent },
-    ]
-  },
-  {
-    path: 'post',
-    component: BlankComponent,
-    children: [
-      { path: '', component: ProductosCampanasComponent },
-    ]
-  },
-  {
-    path: 'login',
-    component: BlankComponent,
-    children: [
-      { path: '', component: LoginComponent },
-    ]
-  },
-  {
-    path: 'registro',
-    component: BlankComponent,
-    children: [
-      { path: '', component: RegistroComponent },
-    ]
-  },
+  
 
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];

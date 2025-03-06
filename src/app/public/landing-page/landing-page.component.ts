@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AdopcionesComponent } from 'src/app/adopciones/adopciones.component';
 import { DenunciasComponent } from 'src/app/denuncias/denuncias.component';
+import { AdopcionesComponent } from '../adopciones/adopciones.component';
 
 @Component({
   selector: 'app-landing-page',
-  standalone: true,
-  imports: [],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -18,10 +16,10 @@ export class LandingPageComponent {
 
   ) { }
   goToHome() {
-    this.router.navigate(['/post']);
+    this.router.navigate(['/public/post']);
   }
   goToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/public/login']);
   }
   OpenDenuncias() {
     const dialogRef = this.dialog.open(DenunciasComponent, {

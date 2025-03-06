@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
-  standalone: true,
-  imports: [],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.scss'
 })

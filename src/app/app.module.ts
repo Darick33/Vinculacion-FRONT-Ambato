@@ -15,6 +15,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ComponentsModule } from './components/components.module';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { FullEjemploComponent } from './layouts/fullEjemplo/full.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UtilsModule } from './utils/utils.module';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { FullEjemploComponent } from './layouts/fullEjemplo/full.component';
   ],
   imports: [
     BrowserModule,
+        HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FeatherModule.pick(allIcons),
     DemoFlexyModule,
     DashboardModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    UtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-productos-campanas',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './productos-campanas.component.html',
   styleUrls: ['./productos-campanas.component.scss']
 })
