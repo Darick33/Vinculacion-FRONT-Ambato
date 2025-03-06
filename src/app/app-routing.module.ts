@@ -24,6 +24,7 @@ import { ProductosCampanasComponent } from './pages/productos-campanas/productos
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FullEjemploComponent } from './layouts/fullEjemplo/full.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
@@ -85,6 +86,13 @@ const routes: Routes = [
     component: BlankComponent,
     children: [
       { path: '', component: RegistroComponent },
+    ]
+  },
+  {
+    path: 'admin',
+    component: BlankComponent,
+    children: [
+      { path: '', component: AdminComponent },
     ]
   },
 
