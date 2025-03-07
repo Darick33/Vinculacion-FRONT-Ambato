@@ -17,6 +17,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './configuracion_Incial/admin.component';
+import { MascotasFormComponent } from './mascotas/mascotas-form/mascotas-form.component';
 
 
 
@@ -24,12 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     DashboardComponent,
+    AdminComponent,
     SalesComponent,
     ActivityComponent,
     ProductComponent,
     CardsComponent,
     UsuariosComponent,
-    MascotasComponent
+    MascotasComponent,
+    MascotasFormComponent
   ],
   imports: [
     CommonModule,

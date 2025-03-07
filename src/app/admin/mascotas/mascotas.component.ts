@@ -4,6 +4,8 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { PokemonService } from 'src/app/services/pokemmon.service';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { MascotasFormComponent } from './mascotas-form/mascotas-form.component';
 
 @Component({
   selector: 'app-mascotas',
@@ -11,7 +13,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./mascotas.component.scss']
 })
 export class MascotasComponent implements OnInit, OnDestroy {
-  displayedColumns: string[] = ['name', 'work', 'project', 'priority', 'budget'];
+  displayedColumns: string[] = ['name', 'work', 'project', 'priority', 'budget', 'actions'];
   dataSource = new MatTableDataSource<any>();
   totalPokemons: number = 0;
   pageSize: number = 2;
@@ -20,11 +22,14 @@ export class MascotasComponent implements OnInit, OnDestroy {
   allPokemons: any[] = []; 
 
   private subscriptions: Subscription = new Subscription(); 
-
+  
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private pokemonService: PokemonService,
+  public dialog: MatDialog,
+
+  ) {}
   /**
    * Método de inicialización del componente.
    * Se encarga de cargar la lista inicial de Pokémon.
@@ -52,6 +57,13 @@ export class MascotasComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe(); 
   }
+  OpenDenuncias() {
+      const dialogRef = this.dialog.open(MascotasFormComponent, {
+      });
+      const suscription = dialogRef.afterClosed().subscribe(() => {
+      });
+      this.subscriptions.add(suscription);
+    }
 
    /**
    * Carga los Pokémon desde la API.

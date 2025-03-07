@@ -46,7 +46,7 @@ export class SalesComponent {
         {
           name: 'Ample Admin',
           data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
-          color: "#fb9678",
+          color: "#6bb23c",
         },
         {
           name: 'Pixel Admin',

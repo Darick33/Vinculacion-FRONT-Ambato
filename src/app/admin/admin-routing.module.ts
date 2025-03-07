@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { U } from '@angular/cdk/keycodes';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
+import { AdminComponent } from './configuracion_Incial/admin.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
 
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'mascotas', component: MascotasComponent },
+      { path: 'config', component: AdminComponent },
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto
     ]
