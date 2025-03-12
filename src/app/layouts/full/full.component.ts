@@ -45,7 +45,7 @@ export class FullComponent {
       menu: "Roles",
     },
     {
-      link: "/admin/alerts",
+      link: "/admin/config",
       icon: "alert-triangle",
       menu: "Configuracion Inicial",
     },

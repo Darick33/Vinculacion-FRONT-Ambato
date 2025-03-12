@@ -6,7 +6,7 @@ import { ActivityComponent } from './dashboard/dashboard-components/activity/act
 import { ProductComponent } from './dashboard/dashboard-components/product/product.component';
 import { CardsComponent } from './dashboard/dashboard-components/cards/cards.component';
 import { DemoFlexyModule } from '../demo-flexy-module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AdminRoutingModule } from './admin-routing.module';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -17,8 +17,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminComponent } from './configuracion_Incial/admin.component';
 import { MascotasFormComponent } from './mascotas/mascotas-form/mascotas-form.component';
+import { ConfiguracionInicialComponent } from './configuracion-inicial/configuracion-inicial.component';
 
 
 
@@ -26,14 +26,15 @@ import { MascotasFormComponent } from './mascotas/mascotas-form/mascotas-form.co
 @NgModule({
   declarations: [
     DashboardComponent,
-    AdminComponent,
+    ConfiguracionInicialComponent,
     SalesComponent,
     ActivityComponent,
     ProductComponent,
     CardsComponent,
     UsuariosComponent,
     MascotasComponent,
-    MascotasFormComponent
+    MascotasFormComponent,
+    ConfiguracionInicialComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +48,7 @@ import { MascotasFormComponent } from './mascotas/mascotas-form/mascotas-form.co
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   exports: [
     DashboardComponent,

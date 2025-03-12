@@ -1,0 +1,54 @@
+<h2>Configuración Inicial</h2>
+
+<form [formGroup]="configForm" (ngSubmit)="onSubmit()">
+  <div class="grid grid-cols-2 gap-4">
+    <mat-form-field class="w-full">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>URL del Logo</mat-label>
+      <input matInput formControlName="urlLogo">
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Ubicación</mat-label>
+      <input matInput formControlName="ubicacion">
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>¿Quiénes Somos?</mat-label>
+      <textarea matInput formControlName="quienesSomos"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Misión</mat-label>
+      <textarea matInput formControlName="mision"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Visión</mat-label>
+      <textarea matInput formControlName="vision"></textarea>
+    </mat-form-field>
+
+    <!-- Grupo de selección de colores -->
+    <mat-card class="col-span-2 p-4">
+      <h3 class="text-lg font-semibold mb-2">Colores</h3>
+      <div class="grid grid-cols-3 gap-4">
+        
+        <div>
+          <label>Color Principal</label>
+          <input type="color" formControlName="colorPrincipal" class="w-full h-10">
+        </div>
+        <div>
+          <label>Color Secundario</label>
+          <input type="color" formControlName="colorSecundario" class="w-full h-10">
+        </div>
+      </div>
+    </mat-card>
+
+  </div>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="configForm.invalid">Guardar</button>
+</form>
