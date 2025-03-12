@@ -22,14 +22,14 @@ export class ConfiguracionService {
     return this.http.get<ConfiguracionApiResponse>(`${environment.apiUrlBase}/DatosInstitucion/GetAllDatosInstitucion`, { params
     });
   }
-  getConfigurationById(id: number): Observable<Configuracion> {
-    return this.http.get<Configuracion>(`${environment.apiUrlBase}/DatosInstitucion/GetDatosInstitucionById/${id}`);
+  getConfigurationById(): Observable<Configuracion> {
+    return this.http.get<Configuracion>(`${environment.apiUrlBase}/DatosInstitucion/GetDatosInstitucionLast`);
   }
   createConfiguration(configuracion: Configuracion): Observable<Configuracion> {
     return this.http.post<Configuracion>(`${environment.apiUrlBase}/DatosInstitucion/CreateDatosInstitucion`, configuracion);
   }
-  updateConfiguration(configuracion: ConfiguracionApiResponse): Observable<ConfiguracionApiResponse> {
-    return this.http.put<ConfiguracionApiResponse>(`${environment.apiUrlBase}/DatosInstitucion/UpdateDatosInstitucion`, configuracion);
+  updateConfiguration(configuracion: Configuracion): Observable<Configuracion> {
+    return this.http.put<Configuracion>(`${environment.apiUrlBase}/DatosInstitucion/UpdateDatosInstitucion`, configuracion);
   }
   deleteConfiguration(id: number): Observable<ConfiguracionApiResponse> {
     return this.http.delete<ConfiguracionApiResponse>(`${environment.apiUrlBase}/DatosInstitucion/DeleteDatosInstitucion/${id}`);
