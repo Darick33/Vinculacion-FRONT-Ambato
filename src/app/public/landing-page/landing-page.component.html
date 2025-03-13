@@ -28,7 +28,7 @@
             <a href="#ubicacion" class="text-lg font-medium text-gray-800 hover:text-primary">Ubicación</a>
             <a href="#contacto" class="text-lg font-medium text-gray-800 hover:text-primary">Contacto</a>
         </div>
-        <button class="bg-primary text-white px-6 py-2 rounded-md text-lg hover:bg-primary transition duration-300 hidden md:block">LOGIN</button>
+        <button (click)="goToLogin()" class="bg-primary text-white px-6 py-2 rounded-md text-lg hover:bg-primary transition duration-300 hidden md:block" >LOGIN</button>
         <button class="md:hidden bg-primary text-white p-2 rounded-md" id="menu-toggle">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -43,7 +43,7 @@
         <a href="#denuncias" class="block text-lg text-gray-800 py-2 hover:text-primary">Denuncias</a>
         <a href="#ubicacion" class="block text-lg text-gray-800 py-2 hover:text-primary">Ubicación</a>
         <a href="#contacto" class="block text-lg text-gray-800 py-2 hover:text-primary">Contacto</a>
-        <button class="bg-primary text-white px-6 py-2 rounded-md text-lg w-full mt-4">LOGIN</button>
+        <button class="bg-primary text-white px-6 py-2 rounded-md text-lg w-full mt-4" (click)="goToLogin()">LOGIN</button >
     </div>
 </nav>
 <!-- HERO IMAGE -->
