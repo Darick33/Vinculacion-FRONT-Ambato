@@ -1,6 +1,6 @@
 <div class="w-full max-w-2xl m-auto bg-[var(--light)] rounded p-5">
   <header>
-    <img class="w-20 mx-auto mb-5" src="../../../assets/images/logo.png" />
+    <img class="w-20 mx-auto mb-5" src="../../assets/images/logo.png" />
   </header>
   <form>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -21,16 +21,17 @@
         <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="tel" name="contact" id="contact">
       </div>
       <div>
-        <label class="block mb-2 text-[var(--dark)]" for="dog-name">Nombre de la mascota</label>
-        <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="text" name="dog-name" id="dog-name" value="ASLAN" readonly>
+        <label class="block mb-2 text-[var(--dark)]" for="complaint">Ingrese la Denuncia</label>
+        <textarea class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" name="complaint" id="complaint" rows="4"></textarea>
       </div>
       <div>
-        <img src="../../assets/images/perro3.png" alt="">
+        <label class="block mb-2 text-[var(--dark)]" for="evidence">Evidencias</label>
+        <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="file" name="evidence" id="evidence" multiple>
       </div>
     </div>
 
     <div class="mt-6">
-      <input class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" type="submit" value="Adoptar">
+      <input class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" type="submit" value="Denunciar">
     </div>
   </form>
 </div>

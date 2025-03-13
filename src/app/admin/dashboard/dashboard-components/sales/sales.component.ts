@@ -35,23 +35,26 @@ export interface activeusercardChartOptions {
 
 })
 export class SalesComponent {
-
   @ViewChild("activeusercardchart") chart1: ChartComponent = Object.create(null);
   public activeusercardChartOptions !: Partial<activeusercardChartOptions> | any;
 
   constructor() {
-    // active users
+    // Obtener colores de las variables CSS
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+    const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim();
+
+    // Configuración del gráfico
     this.activeusercardChartOptions = {
       series: [
         {
           name: 'Ample Admin',
           data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
-          color: "#6bb23c",
+          color: primaryColor, // Ahora usa el color en formato HEX
         },
         {
           name: 'Pixel Admin',
           data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
-          color: "#03c9d7",
+          color: secondaryColor, // Usa el color en formato HEX
         },
       ],
       xaxis: {
@@ -63,30 +66,24 @@ export class SalesComponent {
         },
         type: 'bar',
         height: 300,
-
       },
       legend: {
         show: false,
       },
-
       tooltip: {
-        theme: "dark"
+        theme: "dark",
       },
-
       grid: {
         show: false,
       },
-
       dataLabels: {
         enabled: false,
       },
-
       stroke: {
         show: true,
         width: 5,
-        colors: ['none']
+        colors: ['none'],
       },
-
       plotOptions: {
         bar: {
           columnWidth: '45%',
@@ -95,6 +92,4 @@ export class SalesComponent {
       },
     }
   }
-
-
 }

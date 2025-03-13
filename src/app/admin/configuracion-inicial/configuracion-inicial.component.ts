@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Configuracion } from 'src/app/interfaces/configuracion.interface';
 import { AlertService } from 'src/app/services/alert.service';
 import { ConfiguracionService } from 'src/app/services/configuracion.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-configuracion-inicial',
@@ -11,7 +12,7 @@ import { ConfiguracionService } from 'src/app/services/configuracion.service';
 })
 export class ConfiguracionInicialComponent {
 
-  constructor(private configService: ConfiguracionService, private alertService: AlertService) {}
+  constructor(private configService: ConfiguracionService, private alertService: AlertService, private themeService:ThemeService) {}
 
   configuracion: Configuracion | undefined;
 
@@ -44,6 +45,8 @@ export class ConfiguracionInicialComponent {
         this.configForm.patchValue(data);
         console.log('Configuración por ID:', data);
         this.configuracion = data;
+        document.documentElement.style.setProperty('--primary-color', data.colorPrincipal);
+        document.documentElement.style.setProperty('--info-color', data.colorPrincipal);
       },
       error: error => {
         this.alertService.showToast('Error en la peticion' , 'error');
@@ -73,6 +76,15 @@ export class ConfiguracionInicialComponent {
           },
           complete: () => {
             this.alertService.showToast('Configuración insertada correctamente', 'success');
+             this.themeService.loadTheme(); 
+            
+                setTimeout(() => {
+                  this.themeService.setThemeColors(); 
+                }, 2000);
+            
+                effect(() => {
+                  document.documentElement.style.setProperty('--primary', this.themeService.primaryColor());
+                });
           }
         });
       } else {

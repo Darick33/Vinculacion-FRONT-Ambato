@@ -12,7 +12,6 @@
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
-
 <!-- NAVBAR -->
 <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
@@ -21,18 +20,32 @@
             <span class="text-2xl font-bold text-gray-800">Protección Animal</span>
         </a>
         <div class="hidden md:flex space-x-8">
-            <a href="#adopcion" class="text-lg font-medium text-gray-800 hover:text-green-500">Adopción</a>
-            <a href="#quienes-somos" class="text-lg font-medium text-gray-800 hover:text-green-500">Quiénes Somos</a>
-            <a href="#proyectos" class="text-lg font-medium text-gray-800 hover:text-green-500">Proyectos</a>
-            <a href="#campanas" class="text-lg font-medium text-gray-800 hover:text-green-500">Campañas</a>
-            <a href="#denuncias" class="text-lg font-medium text-gray-800 hover:text-green-500">Denuncias</a>
-            <a href="#ubicacion" class="text-lg font-medium text-gray-800 hover:text-green-500">Ubicación</a>
-            <a href="#contacto" class="text-lg font-medium text-gray-800 hover:text-green-500">Contacto</a>
+            <a href="#adopcion" class="text-lg font-medium text-gray-800 hover:text-primary">Adopción</a>
+            <a href="#quienes-somos" class="text-lg font-medium text-gray-800 hover:text-primary">Quiénes Somos</a>
+            <a href="#proyectos" class="text-lg font-medium text-gray-800 hover:text-primary">Proyectos</a>
+            <a href="#campanas" class="text-lg font-medium text-gray-800 hover:text-primary">Campañas</a>
+            <a href="#denuncias" class="text-lg font-medium text-gray-800 hover:text-primary">Denuncias</a>
+            <a href="#ubicacion" class="text-lg font-medium text-gray-800 hover:text-primary">Ubicación</a>
+            <a href="#contacto" class="text-lg font-medium text-gray-800 hover:text-primary">Contacto</a>
         </div>
-        <button class="bg-black text-white px-6 py-2 rounded-md text-lg hover:bg-gray-800 transition duration-300 " (click)="goToLogin()">LOGIN</button>
+        <button class="bg-primary text-white px-6 py-2 rounded-md text-lg hover:bg-primary transition duration-300 hidden md:block">LOGIN</button>
+        <button class="md:hidden bg-primary text-white p-2 rounded-md" id="menu-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+    <div id="menu" class="hidden md:hidden bg-white shadow-md absolute top-20 left-0 right-0 px-6 py-4">
+        <a href="#adopcion" class="block text-lg text-gray-800 py-2 hover:text-primary">Adopción</a>
+        <a href="#quienes-somos" class="block text-lg text-gray-800 py-2 hover:text-primary">Quiénes Somos</a>
+        <a href="#proyectos" class="block text-lg text-gray-800 py-2 hover:text-primary">Proyectos</a>
+        <a href="#campanas" class="block text-lg text-gray-800 py-2 hover:text-primary">Campañas</a>
+        <a href="#denuncias" class="block text-lg text-gray-800 py-2 hover:text-primary">Denuncias</a>
+        <a href="#ubicacion" class="block text-lg text-gray-800 py-2 hover:text-primary">Ubicación</a>
+        <a href="#contacto" class="block text-lg text-gray-800 py-2 hover:text-primary">Contacto</a>
+        <button class="bg-primary text-white px-6 py-2 rounded-md text-lg w-full mt-4">LOGIN</button>
     </div>
 </nav>
-
 <!-- HERO IMAGE -->
 <div class="container mx-auto flex flex-col-reverse md:flex-row items-center my-16 px-9 ">
     <div class="md:w-1/2 text-center md:text-left">
@@ -49,17 +62,15 @@
     <h3 class="text-3xl font-semibold text-gray-800 mb-10">Adopciones</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Card 1 -->
-       <!-- Card 1 -->
-<div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer" (click)="OpenAdopciones()">
-    <img src="../../../assets/images/perro1.jpg" class="w-full h-96 object-cover" alt="Campaña 1">
-    <div class="p-6">
-        <h5 class="text-xl font-semibold text-gray-800">ROCKY</h5>
-        <p class="text-gray-700"><b>Mi nombre es:</b> Rocky</p>
-        <p class="text-gray-700"><b>Tengo:</b> 3 años</p>
-        <p class="text-gray-700"><b>Carácter:</b> Soy muy dócil</p>
-    </div>
-</div>
-
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer" (click)="OpenAdopciones()">
+            <img src="../../../assets/images/perro1.jpg" class="w-full h-96 object-cover" alt="Campaña 1">
+            <div class="p-6">
+                <h5 class="text-xl font-semibold text-gray-800">ROCKY</h5>
+                <p class="text-gray-700"><b>Mi nombre es:</b> Rocky</p>
+                <p class="text-gray-700"><b>Tengo:</b> 3 años</p>
+                <p class="text-gray-700"><b>Carácter:</b> Soy muy dócil</p>
+            </div>
+        </div>
         <!-- Card 2 -->
         <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer" (click)="OpenAdopciones()">
             <img src="../../../assets/images/perro2.png" class="w-full h-96 object-cover" alt="Campaña 2">
@@ -82,58 +93,55 @@
         </div>
     </div>
 </div>
+
 <!-- SECCIÓN CAMPAÑAS -->
 <div id="campanas2" class="container mx-auto my-20 text-center">
     <h3 class="text-3xl font-semibold text-gray-800 mb-10">Campañas</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Card 1 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana1.webp" alt="Campaña 1" class="w-full h-56 object-cover rounded-t-lg p-6">
-            <div class="p-6" >
+            <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800">Productos y Servicios</h5>
                 <p class="text-gray-700">Puedes colaborar mediante la compra de productos.</p>
-                <button (click)="goToHome()" class="text-green-500 hover:underline mt-4 inline-block">Más Información</button>
+                <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
         </div>
         <!-- Card 2 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana2.jpg" alt="Campaña 2" class="w-full h-56 object-cover rounded-t-lg p-6">
             <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800">Patrocina Empresarial</h5>
                 <p class="text-gray-700">Conviértete en un patrocinador de nuestra causa.</p>
-                <button (click)="goToHome()" class="text-green-500 hover:underline mt-4 inline-block">Más Información</button>
-                
+                <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
         </div>
         <!-- Card 3 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana3.jpg" alt="Campaña 3" class="w-full h-56 object-cover rounded-t-lg p-6">
             <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800">Donaciones por PayPal</h5>
                 <p class="text-gray-700">Ayúdanos con una donación por PayPal.</p>
-                <button (click)="goToHome()" class="text-green-500 hover:underline mt-4 inline-block">Más Información</button>
-                
+                <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
         </div>
         <!-- Card 4 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana2.jpg" alt="Campaña 4" class="w-full h-56 object-cover rounded-t-lg">
             <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800">Débito Automático</h5>
                 <p class="text-gray-700">Realiza donaciones recurrentes mediante débito automático.</p>
-                <button (click)="goToHome()" class="text-green-500 hover:underline mt-4 inline-block">Más Información</button>
-                
+                <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
         </div>
     </div>
 </div>
 
-
 <!-- SECCIÓN DENUNCIAS -->
-<div id="denuncias" class="container mx-auto my-20 text-center">
+<div id="denuncias" class="container mx-auto my-20 text-center" (click)="OpenDenuncias()">
     <h3 class="text-3xl font-semibold text-gray-800 mb-4">Denuncias</h3>
     <p class="text-lg text-gray-700 mb-6">Si quieres reportar un caso de maltrato animal, haz clic en el siguiente botón.</p>
-    <button href="#" class="bg-red-600 text-white px-8 py-3 rounded-md text-lg hover:bg-red-700 transition duration-300" (click)="OpenDenuncias()">Realizar Denuncia</button>
+    <button class="bg-danger text-white px-8 py-3 rounded-md text-lg hover:bg-danger transition duration-300">Realizar Denuncia</button>
 </div>
 
 <!-- GALERÍA DE IMÁGENES EN LÍNEA (CARRUSEL) -->
@@ -162,16 +170,16 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="bg-gray-800 text-white text-center py-6 mt-20">
+<footer class="bg-[var(--secondary)] text-white text-center py-6 mt-20">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
                 <h5 class="text-lg font-semibold">Enlaces</h5>
                 <ul class="list-none space-y-2">
-                    <li><a href="#adopcion" class="text-white hover:text-green-500">Adopción</a></li>
-                    <li><a href="#quienes-somos" class="text-white hover:text-green-500">Quiénes somos</a></li>
-                    <li><a href="#proyectos" class="text-white hover:text-green-500">Proyectos</a></li>
-                    <li><a href="#denuncias" class="text-white hover:text-green-500">Denuncias</a></li>
+                    <li><a href="#adopcion" class="text-white hover:text-[var(--primary)]">Adopción</a></li>
+                    <li><a href="#quienes-somos" class="text-white hover:text-[var(--primary)]">Quiénes somos</a></li>
+                    <li><a href="#proyectos" class="text-white hover:text-[var(--primary)]">Proyectos</a></li>
+                    <li><a href="#denuncias" class="text-white hover:text-[var(--primary)]">Denuncias</a></li>
                 </ul>
             </div>
             <div>
@@ -181,13 +189,26 @@
             </div>
             <div>
                 <h5 class="text-lg font-semibold">Síguenos</h5>
-                <a href="#" class="mr-4"><img src="facebook.png" class="w-8" alt="Facebook"></a>
-                <a href="#"><img src="twitter.png" class="w-8" alt="Twitter"></a>
+                <!-- Usando flex para poner los íconos al lado -->
+                <div class="flex justify-center">
+                    <a href="#" class="mr-4">
+                        <mat-icon>facebook</mat-icon>
+                    </a>
+                    <a href="#" class="mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> 
+                            <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path> 
+                            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path> 
+                            <path d="M16.5 7.5l0 .01"></path> 
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
         <p class="mt-4">© 2025 Protección Animal</p>
     </div>
 </footer>
+
+
 
 
 

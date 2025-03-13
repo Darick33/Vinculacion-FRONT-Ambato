@@ -3,7 +3,7 @@
 
 $flexy-primary: (
   100: #fcf1ed,
-  500: #6bb23c,
+  500: #000000,
   700: #425a61,
   contrast: (
     100: #393939,
@@ -93,20 +93,25 @@ sans-serif;
 // Body Colors
 $body-color: #fafbfb;
 
-// Main Colors
-$primary: #6bb23c;
-$secondary: #777e89;
-$success: #6bb23c;
-$info: #6bb23c;
-$warning: #fec90f;
-$danger: #e46a76;
+:root {
+  --primary: #09cf48;
+  --secondary: #777e89;
+  --success: #09cf48;
+  --info: #09cf48;
+  --warning: #fec90f;
+  --danger: #e46a76;
+}
+
+// Mantener la nomenclatura SCSS, pero ahora basada en variables CSS
+$primary: var(--primary);
+$secondary: var(--secondary);
+$success: var(--success);
+$info: var(--info);
+$warning: var(--warning);
+$danger: var(--danger);
 $indigo: #551a8b;
 $light: #4952581f;
 $dark: #000000de;
-// $dark: #393939;
-$muted: #949db2;
-$white: #fff;
-$black: #000;
 
 // Light Colors
 $light-primary: #fcf1ed;
@@ -119,6 +124,10 @@ $dark-warning: #655419;
 $dark-info: #425a61;
 $dark-success: #145242;
 
+// $dark: #393939;
+$muted: #949db2;
+$white: #fff;
+$black: #000;
 
 
 // Borders

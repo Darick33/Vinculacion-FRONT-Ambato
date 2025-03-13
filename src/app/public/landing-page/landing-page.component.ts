@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DenunciasComponent } from 'src/app/denuncias/denuncias.component';
 import { AdopcionesComponent } from '../adopciones/adopciones.component';
+import { DenunciasComponent } from '../denuncias/denuncias.component';
 
 @Component({
   selector: 'app-landing-page',
