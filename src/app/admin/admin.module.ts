@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { MascotasFormComponent } from './mascotas/mascotas-form/mascotas-form.component';
 import { ConfiguracionInicialComponent } from './configuracion-inicial/configuracion-inicial.component';
+import { EventosComponent } from './eventos/eventos.component';
 
 
 
@@ -34,7 +35,8 @@ import { ConfiguracionInicialComponent } from './configuracion-inicial/configura
     UsuariosComponent,
     MascotasComponent,
     MascotasFormComponent,
-    ConfiguracionInicialComponent
+    ConfiguracionInicialComponent,
+    EventosComponent
   ],
   imports: [
     CommonModule,

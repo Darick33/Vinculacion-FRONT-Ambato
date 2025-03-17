@@ -145,20 +145,55 @@
 </div>
 
 <!-- GALERÍA DE IMÁGENES EN LÍNEA (CARRUSEL) -->
-<div class="carousel-container">
-    <div class="carousel-item">
-      <img src="assets/images/carrusel1.png" class="w-max h-72 object-cover rounded-lg mx-4" alt="Imagen 1">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/carrusel2.jpg" class="w-max h-72 object-cover rounded-lg mx-4" alt="Imagen 2">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/carrusel3.png" class="w-auto h-44 object-cover rounded-lg mx-4" alt="Imagen 3">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/carrusel4.png" class="w-max h-72 object-cover rounded-lg mx-4" alt="Imagen 4">
+<div class="overflow-hidden relative w-full">
+    <!-- Contenedor del carrusel con animación -->
+    <div class="flex space-x-4 animate-scroll">
+      <div class="carousel-item">
+        <img src="assets/images/carrusel1.png" class="w-auto h-72 object-cover rounded-lg" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/carrusel2.jpg" class="w-auto h-72 object-cover rounded-lg" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/carrusel3.png" class="w-auto h-44 object-cover rounded-lg" alt="Imagen 3">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/carrusel4.png" class="w-auto h-72 object-cover rounded-lg" alt="Imagen 4">
+      </div>
+      <!-- Duplicamos las imágenes para el efecto infinito -->
+      <div class="carousel-item">
+        <img src="assets/images/carrusel1.png" class="w-auto h-72 object-cover rounded-lg" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/carrusel2.jpg" class="w-auto h-72 object-cover rounded-lg" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/carrusel3.png" class="w-auto h-44 object-cover rounded-lg" alt="Imagen 3">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/carrusel4.png" class="w-auto h-72 object-cover rounded-lg" alt="Imagen 4">
+      </div>
     </div>
   </div>
+  
+  <style>
+    /* Animación de desplazamiento */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  
+    .animate-scroll {
+      display: flex;
+      width: 200%;
+      animation: scroll 10s linear infinite;
+    }
+  </style>
+  
   
 <!-- SECCIÓN UBICACIÓN -->
 <div id="ubicacion" class="container mx-auto my-20 text-center">

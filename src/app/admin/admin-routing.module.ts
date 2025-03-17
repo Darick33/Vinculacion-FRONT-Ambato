@@ -6,6 +6,7 @@ import { U } from '@angular/cdk/keycodes';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
 import { ConfiguracionInicialComponent } from './configuracion-inicial/configuracion-inicial.component';
+import { EventosComponent } from './eventos/eventos.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'mascotas', component: MascotasComponent },
       { path: 'config', component: ConfiguracionInicialComponent },
+      {path: 'eventos', component: EventosComponent},
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto
     ]
