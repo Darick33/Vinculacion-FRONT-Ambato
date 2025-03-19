@@ -46,7 +46,15 @@
     </div>
   
       <div class="mt-6">
-        <button class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" (click)="onSubmitMascota()">Guardar</button>
+        <button 
+    class="w-full text-white font-bold py-2 px-4 mb-6 rounded transition-all duration-300
+    bg-[var(--primary)] hover:bg-[var(--dark)] 
+    disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
+    (click)="onSubmitMascota()"
+    [disabled]="!mascotasForm.valid">
+    Guardar
+</button>
+
       </div>
     </form>
   </div>

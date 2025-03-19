@@ -137,8 +137,11 @@ export class MascotasComponent implements OnInit, OnDestroy {
   }
   OpenAdopciones() {
     const dialogRef = this.dialog.open(MascotasFormComponent, {
+      data: { id:'' } // Pasamos el ID
+
     });
     dialogRef.afterClosed().subscribe(() => {
+      this.loadMascotas();
     });
   }
   OpenAdopcionesEdit(id: number) {
@@ -150,6 +153,21 @@ export class MascotasComponent implements OnInit, OnDestroy {
       console.log("Modal cerrado");
       this.loadMascotas();
     });
+  }
+  delete(id: string){
+    this.subscriptions.add(
+      this.MascotasService.deleteMascota(id).subscribe({
+        next: data => {
+          console.log('Datos recibidos:', data);
+          this.loadMascotas();
+        },
+        error: error => {
+          console.log('Error en la peticion', 'error');
+        },
+        complete: () => {
+        }
+      })
+    )
   }
   
 }

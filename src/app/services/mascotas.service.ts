@@ -42,7 +42,7 @@ export class MascotasService {
       })
     );
   }
-  deleteMascota(id: number): Observable<MascotasResponse> {
+  deleteMascota(id: string): Observable<MascotasResponse> {
     return this.http.delete<MascotasResponse>(`${environment.apiUrlBase}/Mascota/DeleteMascota/${id}`).pipe(
       tap(() => this.alertService.showToast('Mascota eliminada con éxito', 'success')),
       catchError(error => {
