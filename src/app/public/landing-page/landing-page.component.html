@@ -60,38 +60,32 @@
 <!-- SECCIÓN adopcion -->
 <div id="campanas" class="container mx-auto my-20 text-center">
     <h3 class="text-3xl font-semibold text-gray-800 mb-10">Adopciones</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer" (click)="OpenAdopciones()">
-            <img src="../../../assets/images/perro1.jpg" class="w-full h-96 object-cover" alt="Campaña 1">
+    <div class="flex justify-center">
+        <div 
+        class="grid gap-8 justify-center"
+        [ngClass]="{
+            'grid-cols-1': cantidad === 1,
+            'grid-cols-2': cantidad === 2,
+            'grid-cols-3': cantidad >= 3
+        }"
+    >
+            <!-- Card 1 -->
+            <div *ngFor="let mascota of mascotas" 
+            class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer"
+            (click)="OpenAdopciones()">
+            <img src="../../../assets/images/perro2.png" class="w-full h-96 object-cover" [alt]="mascota.nombre">
             <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">ROCKY</h5>
-                <p class="text-gray-700"><b>Mi nombre es:</b> Rocky</p>
-                <p class="text-gray-700"><b>Tengo:</b> 3 años</p>
-                <p class="text-gray-700"><b>Carácter:</b> Soy muy dócil</p>
+                <h5 class="text-xl font-semibold text-gray-800">{{ mascota.nombre }}</h5>
+                <p class="text-gray-700"><b>Mi nombre es:</b> {{ mascota.nombre }}</p>
+                <p class="text-gray-700"><b>Tengo:</b> {{ mascota.edad }} años</p>
+                <p class="text-gray-700"><b>Carácter:</b> {{ mascota.caracter }}</p>
             </div>
         </div>
-        <!-- Card 2 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer" (click)="OpenAdopciones()">
-            <img src="../../../assets/images/perro2.png" class="w-full h-96 object-cover" alt="Campaña 2">
-            <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">LOCKY, BOBY & PICHS</h5>
-                <p class="text-gray-700"><b>Mi nombre es:</b> LOCKY, BOBY & PICHS</p>
-                <p class="text-gray-700"><b>Tengo:</b> 1 año</p>
-                <p class="text-gray-700"><b>Carácter:</b> Somos 3 hermanos</p>
-            </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer" (click)="OpenAdopciones()">
-            <img src="../../../assets/images/perro3.png" class="w-full h-96 object-cover" alt="Campaña 3">
-            <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">ASLAN</h5>
-                <p class="text-gray-700"><b>Mi nombre es:</b> ASLAN</p>
-                <p class="text-gray-700"><b>Tengo:</b> 1 año</p>
-                <p class="text-gray-700"><b>Carácter:</b> Me gusta dormir</p>
-            </div>
+            <!-- Card 3 -->
+            
         </div>
     </div>
+    
 </div>
 
 <!-- SECCIÓN CAMPAÑAS -->

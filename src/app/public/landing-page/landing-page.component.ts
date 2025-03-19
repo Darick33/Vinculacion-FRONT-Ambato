@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdopcionesComponent } from '../adopciones/adopciones.component';
 import { DenunciasComponent } from '../denuncias/denuncias.component';
+import { Mascotas } from 'src/app/interfaces/mascotas.interface';
+import { MascotasService } from 'src/app/services/mascotas.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,11 +12,19 @@ import { DenunciasComponent } from '../denuncias/denuncias.component';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+cantidad: number = 3;
+  mascotas: Mascotas[] = [];
   constructor(private router: Router,
-    public dialog: MatDialog,
+    public dialog: MatDialog, private mascotasService: MascotasService
 
   ) { }
+  ngOnInit(): void {
+    this.mascotasService.getMascotas(1, 3).subscribe((response) => {
+      this.mascotas = response.items;
+      console.log(this.mascotas);
+      this.cantidad = this.mascotas.length
+    });
+  }
   goToHome() {
     this.router.navigate(['/public/post']);
   }
