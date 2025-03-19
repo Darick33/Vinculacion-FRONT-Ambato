@@ -18,7 +18,7 @@ export class MascotasComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['nombre',  'edad', 'caracter', 'actions'];
   dataSource = new MatTableDataSource<any>();
   totalMascotas: number = 0;
-  pageSize: number = 2;
+  pageSize: number = 5;
   pageIndex: number = 0;
   filterValue: string = ''; 
   mascotas: Mascotas[] | undefined;
