@@ -1,1 +1,53 @@
-<p>mascotas-form works!</p>
+<div class="w-full max-w-2xl m-auto bg-[var(--light)] rounded p-5">
+    <header>
+      <img class="w-20 mx-auto mb-5" src="../../../assets/images/logo.png" />
+    </header>
+    <form [formGroup]="mascotasForm" (ngSubmit)="onSubmit()">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label class="block mb-2 text-[var(--dark)]" for="first-name">Nombre</label>
+          <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="text" name="first-name" id="first-name" formControlName="nombre">
+        </div>
+        <div>
+          <label class="block mb-2 text-[var(--dark)]" >Edad</label>
+          <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="text" name="last-name" id="last-name"formControlName="edad">
+        </div>
+        <div>
+          <label class="block mb-2 text-[var(--dark)]" >Caracter</label>
+          <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="email" formControlName="caracter">
+        </div>
+        <div >
+            <label class="block mb-2 text-[var(--dark)]">Raza</label>
+            <select class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none bg-[var(--light)]" formControlName="idraza">
+              <option value="" disabled selected>Selecciona una raza</option>
+              <option *ngFor="let car of razaList" [value]="car.id">{{ car.nombre }}</option>
+            </select>
+          </div>
+        <div >
+            <label class="block mb-2 text-[var(--dark)]">especie</label>
+            <select class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none bg-[var(--light)]" formControlName="idespecie">
+              <option value="" disabled selected>Selecciona una especie</option>
+              <option *ngFor="let car of especieList" [value]="car.id">{{ car.nombre }}</option>
+            </select>
+          </div>
+        <div >
+            <label class="block mb-2 text-[var(--dark)]">genero</label>
+            <select class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none bg-[var(--light)]" formControlName="idgenero">
+              <option value="" disabled selected>Selecciona una genero</option>
+              <option *ngFor="let car of generoList" [value]="car.id">{{ car.nombre }}</option>
+            </select>
+          </div>
+          
+        
+    </div>
+    <div class="mt-3">
+      <label class="block mb-2 text-[var(--dark)]" >Detalles</label>
+      <textarea class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="email" formControlName="detalles"></textarea>
+    </div>
+  
+      <div class="mt-6">
+        <button class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" (click)="onSubmitMascota()">Guardar</button>
+      </div>
+    </form>
+  </div>
+  
