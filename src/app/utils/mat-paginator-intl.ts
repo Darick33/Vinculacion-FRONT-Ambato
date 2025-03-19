@@ -10,7 +10,6 @@ export class MatPaginatorIntlEs extends MatPaginatorIntl {
   override firstPageLabel = 'Primera página';       
   override lastPageLabel = 'Última página';        
 
-  // Opcional: para personalizar el texto de "page X of Y"
   override getRangeLabel = (page: number, pageSize: number, length: number) => {
     return `${page * pageSize + 1} - ${(page + 1) * pageSize} de ${length}`;
   };
