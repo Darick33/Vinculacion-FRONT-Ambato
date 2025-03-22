@@ -8,7 +8,7 @@ import { ProductosCampanasComponent } from './productos-campanas/productos-campa
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AdopcionesFormComponent } from './adopciones/adopciones.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DenunciasFormComponent } from './denuncias/denuncias.component';
 
 
@@ -18,7 +18,8 @@ import { DenunciasFormComponent } from './denuncias/denuncias.component';
     CommonModule,
     PublicRoutingModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PublicModule { }

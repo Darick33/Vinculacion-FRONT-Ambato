@@ -33,10 +33,13 @@ cantidad: number = 3;
   }
   OpenDenuncias() {
     const dialogRef = this.dialog.open(DenunciasFormComponent, {
+      data: { id: '' } // Pasamos el ID
+
     });
     dialogRef.afterClosed().subscribe(() => {
     });
   }
+
   OpenAdopciones() {
     const dialogRef = this.dialog.open(AdopcionesFormComponent, {
     });

@@ -3,51 +3,49 @@
     <img class="w-24 mx-auto mb-5" src="../../assets/images/logo.png" alt="Logo">
   </header>
 
-  <form (ngSubmit)="onSubmit()">
+  <form [formGroup]="DenunciaForm" (ngSubmit)="onSubmit()">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div>
         <label class="block mb-2 text-[var(--dark)]" for="first-name">Nombre</label>
         <input class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-               type="text" id="first-name" [(ngModel)]="formData.firstName" name="firstName" aria-label="Nombre">
+               type="text" id="first-name" formControlName="nombre">
       </div>
       <div>
         <label class="block mb-2 text-[var(--dark)]" for="last-name">Apellido</label>
         <input class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-               type="text" id="last-name" [(ngModel)]="formData.lastName" name="lastName" aria-label="Apellido">
+               type="text" id="last-name" formControlName="apellido">
       </div>
     </div>
-
+  
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
       <div>
         <label class="block mb-2 text-[var(--dark)]" for="email">Correo Electrónico</label>
         <input class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-               type="email" id="email" [(ngModel)]="formData.email" name="email" aria-label="Correo Electrónico">
+               type="email" id="email" formControlName="email">
       </div>
       <div>
         <label class="block mb-2 text-[var(--dark)]" for="contact">Contacto</label>
         <input class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-               type="tel" id="contact" [(ngModel)]="formData.contact" name="contact" aria-label="Contacto">
+               type="tel" id="contact" formControlName="contacto">
       </div>
       <div>
         <label class="block mb-2 text-[var(--dark)]" for="date">Fecha</label>
         <input class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-               type="date" id="date" [(ngModel)]="formData.date" name="date" aria-label="Fecha">
+               type="date" id="date" formControlName="fecha">
       </div>
     </div>
-
+  
     <div class="mt-6">
       <label class="block mb-2 text-[var(--dark)]" for="address">Dirección</label>
       <input class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-             type="text" id="address" [(ngModel)]="formData.address" name="address" aria-label="Dirección">
+             type="text" id="address" formControlName="direccion">
     </div>
-
+  
     <div class="mt-6">
       <label class="block mb-2 text-[var(--dark)]" for="complaint">Ingrese la Denuncia</label>
       <textarea class="w-full p-3 border-2 border-[var(--primary)] rounded-lg outline-none focus:ring-2 focus:ring-[var(--primary)] transition" 
-                id="complaint" [(ngModel)]="formData.complaint" name="complaint" rows="4" aria-label="Ingrese la denuncia"></textarea>
+                id="complaint" formControlName="datos" rows="4"></textarea>
     </div>
-
-    <!-- Adjuntar Archivos -->
     <div class="">
       <label class="block mb-2 text-[var(--dark)]">Adjuntar Archivos</label>
       <div class="relative border-dotted h-10 rounded-lg border-dashed border-2 border-[var(--primary)] bg-gray-100 flex justify-center items-center cursor-pointer">
@@ -64,10 +62,12 @@
       </ul>
     </div>
 
+
     <div class="mt-6">
       <button type="submit" class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-3 rounded-lg transition">
         Denunciar
       </button>
     </div>
   </form>
+  
 </div>
