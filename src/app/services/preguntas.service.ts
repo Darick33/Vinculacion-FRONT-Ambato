@@ -42,7 +42,7 @@ export class PreguntasService {
       );
     }
 
-    deletePregunta(id: number): Observable<any> {
+    deletePregunta(id: string): Observable<any> {
       return this.http.delete<any>(`${environment.apiUrlBase}/PreguntasFrecuente/DeletePreguntaFrecuente/${id}`).pipe(
         tap(() => this.alertSerice.showToast('Pregunta eliminada con éxito', 'success')),
         catchError(error => {

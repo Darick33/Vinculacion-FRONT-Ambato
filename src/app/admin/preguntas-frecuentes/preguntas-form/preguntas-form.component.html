@@ -1,0 +1,33 @@
+<div class="w-[600px] m-auto bg-[var(--light)] rounded p-5">
+    <header>
+      <img class="w-20 mx-auto mb-5" src="../../../assets/images/logo.png" />
+    </header>
+    <form [formGroup]="preguntasForm" (ngSubmit)="onSubmit()">
+     
+    <div class="mt-3">
+        <div>
+            <label class="block mb-2 text-[var(--dark)]" for="first-name">Pregunta</label>
+            <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="text" name="first-name" id="first-name" formControlName="pregunta">
+          </div>
+    </div>
+    <div class="mt-3">
+        <div>
+            <label class="block mb-2 text-[var(--dark)]" >Respuesta</label>
+            <input class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="text" name="last-name" id="last-name"formControlName="respuesta">
+          </div>
+    </div>
+  
+      <div class="mt-6">
+        <button 
+    class="w-full text-white font-bold py-2 px-4 mb-6 rounded transition-all duration-300
+    bg-[var(--primary)] hover:bg-[var(--dark)] 
+    disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
+    (click)="onSubmitMascota()"
+    [disabled]="!preguntasForm.valid">
+    Guardar
+</button>
+
+      </div>
+    </form>
+  </div>
+  

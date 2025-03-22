@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'post', component: ProductosCampanasComponent },
       { path: 'login', component: LoginComponent },
       { path: 'registro', component: RegistroComponent },
-      { path: '', redirectTo: 'landing', pathMatch: 'full' } // Redirección por defecto
+      { path: '', redirectTo: 'landing', pathMatch: 'full' } 
     ]
   }
 ];

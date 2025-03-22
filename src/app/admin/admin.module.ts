@@ -24,6 +24,7 @@ import { AdopcionesComponent } from './adopciones/adopciones.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { DenunciasInformationComponent } from './denuncias/denuncias-information/denuncias-information.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { PreguntasFormComponent } from './preguntas-frecuentes/preguntas-form/preguntas-form.component';
 
 
 
@@ -44,7 +45,8 @@ import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-f
     AdopcionesComponent,
     DenunciasComponent,
     DenunciasInformationComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    PreguntasFormComponent
   ],
   imports: [
     CommonModule,
