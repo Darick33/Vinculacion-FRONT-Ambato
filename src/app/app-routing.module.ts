@@ -30,7 +30,7 @@ const routes: Routes = [
     path: '',
     component: FullEjemploComponent,
     children: [
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: '', redirectTo: '/public/landing', pathMatch: 'full' },
       { path: 'home', component: DashboardComponent },
       { path: 'alerts', component: AlertsComponent },
       { path: 'forms', component: FormsComponent },
@@ -71,7 +71,7 @@ const routes: Routes = [
 
   
 
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/public/landing', pathMatch: 'full' },
 ];
 
 @NgModule({
