@@ -25,21 +25,21 @@
   <!-- Chat flotante -->
   <div *ngIf="isOpen" class="fixed bottom-16 right-24 bg-white shadow-lg rounded-lg w-80 p-4 border border-gray-300">
     <div class="flex justify-between items-center">
-      <h3 class="text-lg font-semibold">Preguntas Frecuentes</h3>
+      <h3 class="text-lg font-semibold px-3">Preguntas Frecuentes</h3>
       <button (click)="toggleChat()" class="text-gray-500 hover:text-gray-800">✖</button>
     </div>
   
     <div *ngIf="!selectedQuestion" class="my-5">
       <ul class="mt-4 space-y-2 mx-3 px-3">
-        <li *ngFor="let faq of faqList">
-          <button (click)="selectFaq(faq)" class="text-blue-600 hover:underline block text-left w-full">
-            {{ faq.question }}
+        <li *ngFor="let pregunta of preguntas">
+          <button (click)="selectFaq(pregunta.pregunta, pregunta.respuesta)" class="text-blue-600 hover:underline block text-left w-full">
+            {{ pregunta.pregunta }}
           </button>
         </li>
       </ul>
     </div>
   
-    <div *ngIf="selectedQuestion" class="mt-4">
+    <div *ngIf="selectedQuestion" class="mt-4 mx-3 px-3">
       <h4 class="font-semibold">{{ selectedQuestion }}</h4>
       <p class="text-gray-700 mt-2">{{ selectedAnswer }}</p>
       <button (click)="selectedQuestion = null" class="mt-3 text-blue-600 hover:underline">⬅ Volver</button>
