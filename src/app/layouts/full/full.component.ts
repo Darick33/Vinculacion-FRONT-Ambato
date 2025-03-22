@@ -80,7 +80,7 @@ export class FullComponent {
       menu: "Denuncias",
     },
     {
-      link: "/admin/preguntasFrecuentes",
+      link: "/admin/preguntas-frecuentes",
       icon: "help-circle",
       menu: "Preguntas Frecuentes",
     },

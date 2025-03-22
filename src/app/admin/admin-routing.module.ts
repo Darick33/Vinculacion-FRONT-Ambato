@@ -9,6 +9,7 @@ import { ConfiguracionInicialComponent } from './configuracion-inicial/configura
 import { EventosComponent } from './eventos/eventos.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { AdopcionesComponent } from './adopciones/adopciones.component';
+import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
       { path: 'config', component: ConfiguracionInicialComponent },
       {path: 'eventos', component: EventosComponent},
       {path: 'adopciones', component: AdopcionesComponent},
-      {path: 'denuncias', component: DenunciasComponent}, 
+      {path: 'denuncias', component: DenunciasComponent},
+      {path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent}, 
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto
     ]

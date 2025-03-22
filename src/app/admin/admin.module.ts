@@ -23,6 +23,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { AdopcionesComponent } from './adopciones/adopciones.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { DenunciasInformationComponent } from './denuncias/denuncias-information/denuncias-information.component';
+import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 
 
 
@@ -42,7 +43,8 @@ import { DenunciasInformationComponent } from './denuncias/denuncias-information
     EventosComponent,
     AdopcionesComponent,
     DenunciasComponent,
-    DenunciasInformationComponent
+    DenunciasInformationComponent,
+    PreguntasFrecuentesComponent
   ],
   imports: [
     CommonModule,
