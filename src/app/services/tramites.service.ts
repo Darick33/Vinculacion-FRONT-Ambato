@@ -41,7 +41,7 @@ export class TramitesService {
       })
     );
   }
-  deleteTramite(id: number): Observable<any> {
+  deleteTramite(id: string): Observable<any> {
     return this.http.delete<any>(`${environment.apiUrlBase}/Tramite/DeleteTramite/${id}`).pipe(
       tap(() => this.alertService.showToast('Tramite eliminado con éxito', 'success')),
       catchError(error => {

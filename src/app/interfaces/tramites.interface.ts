@@ -26,7 +26,7 @@ export interface Tramite {
 
 }
 export interface TramiteResponse {
-    tramites: Tramite[];
+    items: Tramite[];
     pageNumber: number;
     pageSize: number;
 
