@@ -6,12 +6,12 @@ import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { ProductosCampanasComponent } from './productos-campanas/productos-campanas.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { AdopcionesComponent } from './adopciones/adopciones.component';
 import { MatIconModule } from '@angular/material/icon';
+import { AdopcionesFormComponent } from './adopciones/adopciones.component';
 
 
 @NgModule({
-  declarations: [RegistroComponent,LoginComponent, ProductosCampanasComponent, LandingPageComponent, AdopcionesComponent],
+  declarations: [RegistroComponent,LoginComponent, ProductosCampanasComponent, LandingPageComponent, AdopcionesFormComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,

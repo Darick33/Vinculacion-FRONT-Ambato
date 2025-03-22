@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AdopcionesComponent } from '../adopciones/adopciones.component';
-import { DenunciasComponent } from '../denuncias/denuncias.component';
 import { Mascotas } from 'src/app/interfaces/mascotas.interface';
 import { MascotasService } from 'src/app/services/mascotas.service';
+import { AdopcionesFormComponent } from '../adopciones/adopciones.component';
+import { DenunciasFormComponent } from '../denuncias/denuncias.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -32,13 +32,13 @@ cantidad: number = 3;
     this.router.navigate(['/public/login']);
   }
   OpenDenuncias() {
-    const dialogRef = this.dialog.open(DenunciasComponent, {
+    const dialogRef = this.dialog.open(DenunciasFormComponent, {
     });
     dialogRef.afterClosed().subscribe(() => {
     });
   }
   OpenAdopciones() {
-    const dialogRef = this.dialog.open(AdopcionesComponent, {
+    const dialogRef = this.dialog.open(AdopcionesFormComponent, {
     });
     dialogRef.afterClosed().subscribe(() => {
     });

@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MascotasFormComponent } from './mascotas/mascotas-form/mascotas-form.component';
 import { ConfiguracionInicialComponent } from './configuracion-inicial/configuracion-inicial.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { AdopcionesComponent } from './adopciones/adopciones.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
 
 
 
@@ -36,7 +38,9 @@ import { EventosComponent } from './eventos/eventos.component';
     MascotasComponent,
     MascotasFormComponent,
     ConfiguracionInicialComponent,
-    EventosComponent
+    EventosComponent,
+    AdopcionesComponent,
+    DenunciasComponent
   ],
   imports: [
     CommonModule,

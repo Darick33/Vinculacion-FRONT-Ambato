@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './adopciones.component.html',
   styleUrl: './adopciones.component.scss'
 })
-export class AdopcionesComponent {
+export class AdopcionesFormComponent {
 
 }

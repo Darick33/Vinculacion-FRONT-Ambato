@@ -60,6 +60,11 @@ export class FullComponent {
       menu: "Mascotas",
     },
     {
+      link: "/admin/adopciones",
+      icon: "book", 
+      menu: "Adopciones",
+    },
+    {
       link: "/admin/eventos",
       icon: "calendar",
       menu: "Eventos",

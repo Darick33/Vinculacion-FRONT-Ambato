@@ -7,6 +7,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MascotasComponent } from './mascotas/mascotas.component';
 import { ConfiguracionInicialComponent } from './configuracion-inicial/configuracion-inicial.component';
 import { EventosComponent } from './eventos/eventos.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
+import { AdopcionesComponent } from './adopciones/adopciones.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
       { path: 'mascotas', component: MascotasComponent },
       { path: 'config', component: ConfiguracionInicialComponent },
       {path: 'eventos', component: EventosComponent},
+      {path: 'adopciones', component: AdopcionesComponent},
+      {path: 'denuncias', component: DenunciasComponent}, 
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto
     ]
