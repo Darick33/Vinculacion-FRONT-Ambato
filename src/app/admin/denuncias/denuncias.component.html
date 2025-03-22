@@ -11,9 +11,9 @@
     </button>
   
     <table mat-table [dataSource]="dataSource" matSort class="w-100">
-      <ng-container matColumnDef="nombre">
+      <ng-container matColumnDef="datos">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Denuncia</th>
-        <td mat-cell *matCellDef="let denuncias">{{ denuncias.nombre }}</td>
+        <td mat-cell *matCellDef="let denuncias">{{ denuncias.datos }}</td>
       </ng-container>
       <ng-container matColumnDef="fecha">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>

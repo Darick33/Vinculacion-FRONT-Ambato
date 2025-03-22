@@ -8,14 +8,17 @@ import { ProductosCampanasComponent } from './productos-campanas/productos-campa
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AdopcionesFormComponent } from './adopciones/adopciones.component';
+import { FormsModule } from '@angular/forms';
+import { DenunciasFormComponent } from './denuncias/denuncias.component';
 
 
 @NgModule({
-  declarations: [RegistroComponent,LoginComponent, ProductosCampanasComponent, LandingPageComponent, AdopcionesFormComponent],
+  declarations: [RegistroComponent,LoginComponent, ProductosCampanasComponent, LandingPageComponent, AdopcionesFormComponent, DenunciasFormComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ]
 })
 export class PublicModule { }
