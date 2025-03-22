@@ -22,6 +22,7 @@ import { ConfiguracionInicialComponent } from './configuracion-inicial/configura
 import { EventosComponent } from './eventos/eventos.component';
 import { AdopcionesComponent } from './adopciones/adopciones.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
+import { DenunciasInformationComponent } from './denuncias/denuncias-information/denuncias-information.component';
 
 
 
@@ -40,7 +41,8 @@ import { DenunciasComponent } from './denuncias/denuncias.component';
     ConfiguracionInicialComponent,
     EventosComponent,
     AdopcionesComponent,
-    DenunciasComponent
+    DenunciasComponent,
+    DenunciasInformationComponent
   ],
   imports: [
     CommonModule,

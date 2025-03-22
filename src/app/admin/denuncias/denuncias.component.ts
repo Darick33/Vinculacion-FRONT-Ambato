@@ -11,6 +11,7 @@ import { AdopcionesFormComponent } from 'src/app/public/adopciones/adopciones.co
 import { TramitesService } from 'src/app/services/tramites.service';
 import { Tramite } from 'src/app/interfaces/tramites.interface';
 import { DenunciasFormComponent } from 'src/app/public/denuncias/denuncias.component';
+import { DenunciasInformationComponent } from './denuncias-information/denuncias-information.component';
 
 @Component({
   selector: 'app-denuncias',
@@ -140,8 +141,17 @@ export class DenunciasComponent {
       this.loadDenuncias();
     });
   }
+  OpenInfromation(id: string){
+    const dialogRef = this.dialog.open(DenunciasInformationComponent, {
+      data: { id: id } // Pasamos el ID
+
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.loadDenuncias();
+    });
+  }
   OpenAdopcionesEdit(id: number) {
-    const dialogRef = this.dialog.open(DenunciasFormComponent, {
+    const dialogRef = this.dialog.open(DenunciasInformationComponent, {
       data: { id: id } // Pasamos el ID
     });
   

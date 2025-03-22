@@ -1,4 +1,4 @@
-<div class="w-full max-w-4xl mx-auto bg-[var(--light)] rounded-lg p-6 shadow-lg">
+<div class="w-80% max-w-4xl mx-auto bg-[var(--light)] rounded-lg p-6 shadow-lg">
   <header class="text-center">
     <img class="w-24 mx-auto mb-5" src="../../assets/images/logo.png" alt="Logo">
   </header>
@@ -48,9 +48,9 @@
     </div>
 
     <!-- Adjuntar Archivos -->
-    <div class="mt-6">
+    <div class="">
       <label class="block mb-2 text-[var(--dark)]">Adjuntar Archivos</label>
-      <div class="relative border-dotted h-48 rounded-lg border-dashed border-2 border-[var(--primary)] bg-gray-100 flex justify-center items-center cursor-pointer">
+      <div class="relative border-dotted h-10 rounded-lg border-dashed border-2 border-[var(--primary)] bg-gray-100 flex justify-center items-center cursor-pointer">
         <div class="absolute flex flex-col items-center">
           <i class="fa fa-folder-open fa-3x text-[var(--primary)]"></i>
           <span class="block text-gray-400 text-sm">Arrastra aquí o haz clic para subir</span>
@@ -59,7 +59,7 @@
       </div>
 
       <!-- Lista de archivos cargados -->
-      <ul class="mt-4 text-[var(--dark)] text-sm space-y-2">
+      <ul class=" text-[var(--dark)] text-sm space-y-2">
         <li *ngFor="let file of files">{{ file.name }} ({{ (file.size / 1024).toFixed(2) }} KB)</li>
       </ul>
     </div>
