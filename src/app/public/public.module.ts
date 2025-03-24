@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DenunciasFormComponent } from './denuncias/denuncias.component';
 import { ChatComponent } from './chat/chat.component';
 import { MascotasListComponent } from './mascotas-list/mascotas-list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MascotasListComponent } from './mascotas-list/mascotas-list.component';
     CommonModule,
     PublicRoutingModule,
     MatIconModule,
+    MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule
   ]

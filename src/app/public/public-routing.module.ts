@@ -5,6 +5,7 @@ import { BlankComponent } from '../layouts/blank/blank.component';
 import { ProductosCampanasComponent } from './productos-campanas/productos-campanas.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { MascotasListComponent } from './mascotas-list/mascotas-list.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'post', component: ProductosCampanasComponent },
       { path: 'login', component: LoginComponent },
       { path: 'registro', component: RegistroComponent },
+      {path: 'mascotas', component: MascotasListComponent},
       { path: '', redirectTo: 'landing', pathMatch: 'full' } 
     ]
   }

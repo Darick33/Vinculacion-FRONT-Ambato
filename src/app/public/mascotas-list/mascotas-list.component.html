@@ -1,1 +1,64 @@
-<p>mascotas-list works!</p>
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <a href="#" class="flex items-center space-x-2">
+            <img src="../../../assets/images/logo.png" alt="Logo" class="w-12 h-auto">
+            <span class="text-2xl font-bold text-gray-800">Protección Animal</span>
+        </a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#adopcion" class="text-lg font-medium text-gray-800 hover:text-primary">Adopción</a>
+            <a href="#quienes-somos" class="text-lg font-medium text-gray-800 hover:text-primary">Quiénes Somos</a>
+            <a href="#proyectos" class="text-lg font-medium text-gray-800 hover:text-primary">Proyectos</a>
+            <a href="#campanas" class="text-lg font-medium text-gray-800 hover:text-primary">Campañas</a>
+            <a href="#denuncias" class="text-lg font-medium text-gray-800 hover:text-primary">Denuncias</a>
+            <a href="#ubicacion" class="text-lg font-medium text-gray-800 hover:text-primary">Ubicación</a>
+            <a href="#contacto" class="text-lg font-medium text-gray-800 hover:text-primary">Contacto</a>
+        </div>
+        <button (click)="goToLogin()" class="bg-primary text-white px-6 py-2 rounded-md text-lg hover:bg-primary transition duration-300 hidden md:block" >LOGIN</button>
+        <button class="md:hidden bg-primary text-white p-2 rounded-md" id="menu-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+    <div id="menu" class="hidden md:hidden bg-white shadow-md absolute top-20 left-0 right-0 px-6 py-4">
+        <a href="#adopcion" class="block text-lg text-gray-800 py-2 hover:text-primary">Adopción</a>
+        <a href="#quienes-somos" class="block text-lg text-gray-800 py-2 hover:text-primary">Quiénes Somos</a>
+        <a href="#proyectos" class="block text-lg text-gray-800 py-2 hover:text-primary">Proyectos</a>
+        <a href="#campanas" class="block text-lg text-gray-800 py-2 hover:text-primary">Campañas</a>
+        <a href="#denuncias" class="block text-lg text-gray-800 py-2 hover:text-primary">Denuncias</a>
+        <a href="#ubicacion" class="block text-lg text-gray-800 py-2 hover:text-primary">Ubicación</a>
+        <a href="#contacto" class="block text-lg text-gray-800 py-2 hover:text-primary">Contacto</a>
+        <button class="bg-primary text-white px-6 py-2 rounded-md text-lg w-full mt-4" (click)="goToLogin()">LOGIN</button >
+    </div>
+</nav>
+<div class="min-h-screen bg-white flex flex-col py-12 sm:px-6 lg:px-8">
+
+    <h1 class="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl">
+      <span class="text-transparent bg-clip-text bg-primary">Mascotas</span> Listas para adoptar
+    </h1>
+    
+    <p class="text-lg font-normal text-gray-500 lg:text-xl mb-12">
+      En esta sección, puedes explorar y descubrir las mascotas que tenemos listas para adoptar en nuestros diferentes albergues
+    </p>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          @for (mascota of mascotas; track $index) {
+        <!-- Card -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer"
+        (click)="OpenAdopciones()">
+        <img src="../../../assets/images/perro2.png" class="w-full h-52 object-cover" [alt]="mascota.nombre">
+        <div class="p-6">
+            <h5 class="text-xl font-semibold text-gray-800">{{ mascota.nombre }}</h5>
+            <p class="text-gray-700"><b>Mi nombre es:</b> {{ mascota.nombre }}</p>
+            <p class="text-gray-700"><b>Tengo:</b> {{ mascota.edad }} años</p>
+            <p class="text-gray-700"><b>Carácter:</b> {{ mascota.caracter }}</p>
+        </div>
+        </div>
+    }
+      </div>
+  
+    <div class="flex justify-center  mb-4 mt-5">
+      <mat-paginator class="right-0" [length]="totalMascotas" [pageSize]="mascotas.length" (page)="onPageChange($event)"></mat-paginator>
+    </div>
+  </div>
+  
