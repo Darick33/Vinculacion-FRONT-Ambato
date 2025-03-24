@@ -12,10 +12,9 @@ export class PreguntasService {
 
   constructor(private alertSerice: AlertService, private http: HttpClient) { }
   getPreguntas(page: number, pageSize: number, filter: string = ''): Observable<PreguntasResponce>{
-      const offset = (page - 1) * pageSize;
               let params = new HttpParams()
-                .set('offset', offset.toString())
-                .set('limit', pageSize.toString());
+                .set('pageNumber', page.toString())
+                .set('pageSize', pageSize.toString());
           
               if (filter) {
                 params = params.set('search', filter);

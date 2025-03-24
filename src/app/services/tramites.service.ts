@@ -12,10 +12,9 @@ export class TramitesService {
 
   constructor(private alertService: AlertService, private http: HttpClient) { }
   getTramites(page: number, pageSize: number, filter: string = ''): Observable<TramiteResponse>{
-    const offset = (page - 1) * pageSize;
             let params = new HttpParams()
-              .set('offset', offset.toString())
-              .set('limit', pageSize.toString());
+              .set('pageNumber', page.toString())
+              .set('pageSize', pageSize.toString());
         
             if (filter) {
               params = params.set('search', filter);

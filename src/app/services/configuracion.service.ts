@@ -14,10 +14,9 @@ export class ConfiguracionService {
 
 
   getConfigurations(page: number, pageSize: number,): Observable <ConfiguracionApiResponse> {
-    const offset = (page - 1) * pageSize;
     let params = new HttpParams()
-      .set('offset', offset.toString())
-      .set('limit', pageSize.toString());
+      .set('pageNumber', page.toString())
+      .set('pageSize', pageSize.toString());
 
     return this.http.get<ConfiguracionApiResponse>(`${environment.apiUrlBase}/DatosInstitucion/GetAllDatosInstitucion`, { params
     });
