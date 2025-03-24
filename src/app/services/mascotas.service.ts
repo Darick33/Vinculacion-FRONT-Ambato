@@ -12,10 +12,9 @@ export class MascotasService {
 
   constructor(private alertService: AlertService,private http: HttpClient) { }
   getMascotas(page: number, pageSize: number, filter: string = ''): Observable<MascotasResponse>{
-    const offset = (page - 1) * pageSize;
         let params = new HttpParams()
-          .set('offset', offset.toString())
-          .set('limit', pageSize.toString());
+          .set('pageNumber', page.toString())
+          .set('pageSize', pageSize.toString());
     
         if (filter) {
           params = params.set('search', filter);

@@ -27,7 +27,7 @@ import { UtilsModule } from './utils/utils.module';
   ],
   imports: [
     BrowserModule,
-        HttpClientModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FeatherModule.pick(allIcons),
