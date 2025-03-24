@@ -11,10 +11,11 @@ import { AdopcionesFormComponent } from './adopciones/adopciones.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DenunciasFormComponent } from './denuncias/denuncias.component';
 import { ChatComponent } from './chat/chat.component';
+import { MascotasListComponent } from './mascotas-list/mascotas-list.component';
 
 
 @NgModule({
-  declarations: [RegistroComponent,LoginComponent, ProductosCampanasComponent, LandingPageComponent, AdopcionesFormComponent, DenunciasFormComponent, ChatComponent],
+  declarations: [RegistroComponent,LoginComponent, ProductosCampanasComponent, LandingPageComponent, AdopcionesFormComponent, DenunciasFormComponent, ChatComponent, MascotasListComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,
