@@ -113,6 +113,12 @@ export class DenunciasComponent {
     this.pageIndex = event.pageIndex;
     this.loadDenuncias(this.pageIndex + 1, this.filterValue);  
   }
+  resetear(){
+    this.pageIndex = 0;
+    if (this.paginator) {
+      this.paginator.firstPage(); // Reset visualmente el paginador
+    }
+}
 
   applyFilter(event: Event): void {
     this.filterValue = (event.target as HTMLInputElement).value;
@@ -139,6 +145,7 @@ export class DenunciasComponent {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.loadDenuncias();
+      this.resetear();
     });
   }
   OpenInfromation(id: string){
@@ -148,6 +155,7 @@ export class DenunciasComponent {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.loadDenuncias();
+      this.resetear();
     });
   }
   OpenAdopcionesEdit(id: number) {
@@ -166,6 +174,7 @@ export class DenunciasComponent {
         next: data => {
           console.log('Datos recibidos:', data);
           this.loadDenuncias();
+          this.resetear();
         },
         error: error => {
           console.log('Error en la peticion', 'error');
