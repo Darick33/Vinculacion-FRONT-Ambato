@@ -42,6 +42,6 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   
-    <mat-paginator [length]="totalMascotas" [pageSize]="mascotas?.length" (page)="onPageChange($event)"></mat-paginator>
+    <mat-paginator [length]="totalMascotas"  [pageSize]="5" (page)="onPageChange($event)"></mat-paginator>
   </div>
   

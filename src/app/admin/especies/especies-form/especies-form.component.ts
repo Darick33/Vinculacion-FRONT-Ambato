@@ -26,7 +26,7 @@ export class EspeciesFormComponent {
 
   especie: Especies | undefined;
   especiesForm = new FormGroup({
-    nombre: new FormControl('', [Validators.required]),
+  nombre: new FormControl('', [Validators.required]),
   });
 
   ngOnInit() {

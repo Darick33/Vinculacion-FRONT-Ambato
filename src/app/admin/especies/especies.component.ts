@@ -16,7 +16,7 @@ import { EspeciesFormComponent } from './especies-form/especies-form.component';
 })
 export class EspeciesComponent {
 
-  displayedColumns: string[] = ['nombre', 'estaactivo', 'actions'];
+  displayedColumns: string[] = ['nombre',  'actions'];
   dataSource = new MatTableDataSource<any>();
   totalEspecies: number = 0;
   pageSize: number = 5;
@@ -80,7 +80,12 @@ export class EspeciesComponent {
       );
     }
   }
-
+  resetear(){
+    this.pageIndex = 0;
+    if (this.paginator) {
+      this.paginator.firstPage(); // Reset visualmente el paginador
+    }
+}
   applyFilter(event: Event): void {
     this.filterValue = (event.target as HTMLInputElement).value;
     this.applyClientFilter();
@@ -110,6 +115,7 @@ export class EspeciesComponent {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.loadEspecies();
+      this.resetear();
     });
   }
 
@@ -119,6 +125,8 @@ export class EspeciesComponent {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.loadEspecies();
+      this.resetear();
+
     });
   }
 
@@ -128,6 +136,8 @@ export class EspeciesComponent {
         next: data => {
           console.log('Datos recibidos:', data);
           this.loadEspecies();
+      this.resetear();
+
         },
         error: error => {
           console.log('Error en la peticion', 'error');

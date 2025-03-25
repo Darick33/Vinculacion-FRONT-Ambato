@@ -1,9 +1,11 @@
-<div class="w-full max-w-2xl m-auto bg-[var(--light)] rounded p-5">
+<div class="w-full max-w-4xl min-w-[500px] m-auto bg-[var(--light)] rounded-lg p-8">
+
+
     <header>
         <img class="w-20 mx-auto mb-5" src="../../../assets/images/logo.png" />
     </header>
     <form [formGroup]="especiesForm" (ngSubmit)="onSubmit()">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class=" gap-6">
             <div>
                 <label class="block mb-2 text-[var(--dark)]" for="first-name">Nombre</label>
                 <input
@@ -11,16 +13,7 @@
                     type="text" name="first-name" id="first-name" formControlName="nombre">
             </div>
 
-            <div>
-                <label class="block mb-2 text-[var(--dark)]">Estado</label>
-                <select
-                    class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none bg-[var(--light)]"
-                    formControlName="idraza">
-                    <option value="" disabled selected>Selecciona un estado</option>
-                    <option value="true">Activo</option>
-                    <option value="false">Inactivo</option>
-                </select>
-            </div>
+           
         </div>
         <div class="mt-6">
             <button class="w-full text-white font-bold py-2 px-4 mb-6 rounded transition-all duration-300

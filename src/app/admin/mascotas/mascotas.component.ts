@@ -101,16 +101,28 @@ export class MascotasComponent implements OnInit, OnDestroy {
 
   //   this.subscriptions.add(subscription); 
   // }
+  resetear(){
+      this.pageIndex = 0;
+      if (this.paginator) {
+        this.paginator.firstPage(); // Reset visualmente el paginador
+      }
+  }
   loadMascotas(page: number = 1, filter: string = ''): void {
-    const subscription = this.MascotasService.getMascotas(page, this.pageSize).subscribe(response => {
-      this.totalMascotas = response.totalCount;
-      this.mascotas = response.items;
-      this.applyClientFilter();
-      console.log(this.mascotas)
-    });
+    const subscription = this.MascotasService.getMascotas(page, this.pageSize, filter)
+      .subscribe(response => {
+        this.totalMascotas = response.totalCount; // Asigna el total correcto
+        this.pageSize = response.pageSize; // Asegúrate de usar el tamaño de página del backend
+        this.mascotas = response.items; // Lista de mascotas
+        this.applyClientFilter();
+        console.log('Mascotas:', this.mascotas);
+        console.log('Total Mascotas:', this.totalMascotas);
+        console.log('Total Páginas:', response.totalPages);
 
+      });
+  
     this.subscriptions.add(subscription);
   }
+  
 
   onPageChange(event: PageEvent): void {
     this.pageIndex = event.pageIndex;
@@ -142,6 +154,8 @@ export class MascotasComponent implements OnInit, OnDestroy {
     });
     dialogRef.afterClosed().subscribe(() => {
       this.loadMascotas();
+      this.resetear();
+
     });
   }
   OpenAdopcionesEdit(id: number) {
@@ -152,6 +166,7 @@ export class MascotasComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(() => {
       console.log("Modal cerrado");
       this.loadMascotas();
+      this.resetear();
     });
   }
   delete(id: string){
@@ -160,6 +175,8 @@ export class MascotasComponent implements OnInit, OnDestroy {
         next: data => {
           console.log('Datos recibidos:', data);
           this.loadMascotas();
+      this.resetear();
+
         },
         error: error => {
           console.log('Error en la peticion', 'error');
