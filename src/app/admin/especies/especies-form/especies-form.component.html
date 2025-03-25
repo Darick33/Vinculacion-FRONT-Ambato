@@ -1,1 +1,35 @@
-<p>especies-form works!</p>
+<div class="w-full max-w-2xl m-auto bg-[var(--light)] rounded p-5">
+    <header>
+        <img class="w-20 mx-auto mb-5" src="../../../assets/images/logo.png" />
+    </header>
+    <form [formGroup]="especiesForm" (ngSubmit)="onSubmit()">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+                <label class="block mb-2 text-[var(--dark)]" for="first-name">Nombre</label>
+                <input
+                    class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]"
+                    type="text" name="first-name" id="first-name" formControlName="nombre">
+            </div>
+
+            <div>
+                <label class="block mb-2 text-[var(--dark)]">Estado</label>
+                <select
+                    class="w-full p-2 text-[var(--dark)] border-b-2 border-[var(--primary)] outline-none bg-[var(--light)]"
+                    formControlName="idraza">
+                    <option value="" disabled selected>Selecciona un estado</option>
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="mt-6">
+            <button class="w-full text-white font-bold py-2 px-4 mb-6 rounded transition-all duration-300
+    bg-[var(--primary)] hover:bg-[var(--dark)] 
+    disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400" (click)="onSubmitEspecie()"
+                [disabled]="!especiesForm.valid">
+                Guardar
+            </button>
+
+        </div>
+    </form>
+</div>

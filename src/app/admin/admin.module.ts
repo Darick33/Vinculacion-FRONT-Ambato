@@ -25,6 +25,8 @@ import { DenunciasComponent } from './denuncias/denuncias.component';
 import { DenunciasInformationComponent } from './denuncias/denuncias-information/denuncias-information.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 import { PreguntasFormComponent } from './preguntas-frecuentes/preguntas-form/preguntas-form.component';
+import { EspeciesComponent } from './especies/especies.component';
+import { EspeciesFormComponent } from './especies/especies-form/especies-form.component';
 
 
 
@@ -40,6 +42,8 @@ import { PreguntasFormComponent } from './preguntas-frecuentes/preguntas-form/pr
     UsuariosComponent,
     MascotasComponent,
     MascotasFormComponent,
+    EspeciesComponent,
+    EspeciesFormComponent,
     ConfiguracionInicialComponent,
     EventosComponent,
     AdopcionesComponent,

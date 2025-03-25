@@ -10,6 +10,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { AdopcionesComponent } from './adopciones/adopciones.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
+import { EspeciesComponent } from './especies/especies.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
       {path: 'eventos', component: EventosComponent},
       {path: 'adopciones', component: AdopcionesComponent},
       {path: 'denuncias', component: DenunciasComponent},
+      {path: 'especies', component: EspeciesComponent},
       {path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent}, 
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto

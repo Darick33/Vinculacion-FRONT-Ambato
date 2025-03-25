@@ -1,1 +1,39 @@
-<p>especies works!</p>
+<div class="mat-elevation-z8 p-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <mat-form-field class="example-form-field">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese el nombre" />
+        </mat-form-field>
+    </div>
+    <button mat-button class="btn-primary btn-icon " color="" (click)="OpenEspecies()">
+        <mat-icon>add</mat-icon> Agregar
+    </button>
+
+    <table mat-table [dataSource]="dataSource" matSort class="w-100">
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let especie">{{ especie.nombre }}</td>
+        </ng-container>
+        <ng-container matColumnDef="estaactivo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let especie">{{ especie.estaactivo }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let especie">
+                <button mat-icon-button class="btn-edit" (click)="OpenEspeciesEdit(especie.id)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button class="btn-delete" (click)="deleteEspecie(especie.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="totalEspecies" [pageSize]="especies?.length" (page)="onPageChange($event)"></mat-paginator>
+</div>
