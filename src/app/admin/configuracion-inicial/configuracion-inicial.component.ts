@@ -12,7 +12,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class ConfiguracionInicialComponent {
 
-  constructor(private configService: ConfiguracionService, private alertService: AlertService, private themeService:ThemeService) {}
+  constructor(private configService: ConfiguracionService, private alertService: AlertService, private themeService: ThemeService) { }
 
   configuracion: Configuracion | undefined;
 
@@ -31,10 +31,10 @@ export class ConfiguracionInicialComponent {
   ngOnInit(): void {
     this.configService.getConfigurations(1, 10).subscribe({
       next: data => {
-        console.log('Datos recibidos:', data); 
+        console.log('Datos recibidos:', data);
       },
       error: error => {
-        this.alertService.showToast('Error en la peticion' , 'error');
+        this.alertService.showToast('Error en la peticion', 'error');
       },
       complete: () => {
       }
@@ -49,7 +49,7 @@ export class ConfiguracionInicialComponent {
         document.documentElement.style.setProperty('--info-color', data.colorPrincipal);
       },
       error: error => {
-        this.alertService.showToast('Error en la peticion' , 'error');
+        this.alertService.showToast('Error en la peticion', 'error');
 
       },
       complete: () => {
@@ -72,19 +72,19 @@ export class ConfiguracionInicialComponent {
             console.log('Configuración actualizada:', data);
           },
           error: error => {
-            this.alertService.showToast('Error en la peticion' , 'error');
+            this.alertService.showToast('Error en la peticion', 'error');
           },
           complete: () => {
             this.alertService.showToast('Configuración insertada correctamente', 'success');
-             this.themeService.loadTheme(); 
-            
-                setTimeout(() => {
-                  this.themeService.setThemeColors(); 
-                }, 2000);
-            
-                effect(() => {
-                  document.documentElement.style.setProperty('--primary', this.themeService.primaryColor());
-                });
+            this.themeService.loadTheme();
+
+            setTimeout(() => {
+              this.themeService.setThemeColors();
+            }, 2000);
+
+            effect(() => {
+              document.documentElement.style.setProperty('--primary', this.themeService.primaryColor());
+            });
           }
         });
       } else {
@@ -96,7 +96,7 @@ export class ConfiguracionInicialComponent {
             console.log('Configuración creada:', data);
           },
           error: error => {
-            this.alertService.showToast('Error en la peticion' , 'error');
+            this.alertService.showToast('Error en la peticion', 'error');
 
           },
           complete: () => {

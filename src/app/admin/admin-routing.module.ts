@@ -11,6 +11,8 @@ import { DenunciasComponent } from './denuncias/denuncias.component';
 import { AdopcionesComponent } from './adopciones/adopciones.component';
 import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-frecuentes.component';
 import { EspeciesComponent } from './especies/especies.component';
+import { GenerosComponent } from './generos/generos.component';
+import { RazasComponent } from './razas/razas.component';
 
 
 const routes: Routes = [
@@ -23,11 +25,13 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'mascotas', component: MascotasComponent },
       { path: 'config', component: ConfiguracionInicialComponent },
-      {path: 'eventos', component: EventosComponent},
-      {path: 'adopciones', component: AdopcionesComponent},
-      {path: 'denuncias', component: DenunciasComponent},
-      {path: 'especies', component: EspeciesComponent},
-      {path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent}, 
+      { path: 'eventos', component: EventosComponent },
+      { path: 'adopciones', component: AdopcionesComponent },
+      { path: 'denuncias', component: DenunciasComponent },
+      { path: 'especies', component: EspeciesComponent },
+      { path: 'razas', component: RazasComponent },
+      { path: 'generos', component: GenerosComponent },
+      { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto
     ]

@@ -65,6 +65,16 @@ export class FullComponent {
       menu: "Especies",
     },
     {
+      link: "/admin/razas",
+      icon: "heart", 
+      menu: "Razas",
+    },
+    {
+      link: "/admin/generos",
+      icon: "heart", 
+      menu: "Generos",
+    },
+    {
       link: "/admin/adopciones",
       icon: "book", 
       menu: "Adopciones",

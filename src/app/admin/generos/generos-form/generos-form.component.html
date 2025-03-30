@@ -2,7 +2,7 @@
     <header>
         <img class="w-20 mx-auto mb-5" src="../../../assets/images/logo.png" />
     </header>
-    <form [formGroup]="especiesForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="generosForm" (ngSubmit)="onSubmit()">
         <div class=" gap-6">
             <div>
                 <label class="block mb-2 text-[var(--dark)]" for="first-name">Nombre</label>
@@ -14,8 +14,8 @@
         <div class="mt-6">
             <button class="w-full text-white font-bold py-2 px-4 mb-6 rounded transition-all duration-300
     bg-[var(--primary)] hover:bg-[var(--dark)] 
-    disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400" (click)="onSubmitEspecie()"
-                [disabled]="!especiesForm.valid">
+    disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400" (click)="onSubmitGenero()"
+                [disabled]="!generosForm.valid">
                 Guardar
             </button>
         </div>

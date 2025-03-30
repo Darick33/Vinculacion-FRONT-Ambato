@@ -12,7 +12,6 @@ import { EspeciesService } from 'src/app/services/especies.service';
 })
 export class EspeciesFormComponent {
 
-
   onSubmit() {
     throw new Error('Method not implemented.');
   }
@@ -26,7 +25,7 @@ export class EspeciesFormComponent {
 
   especie: Especies | undefined;
   especiesForm = new FormGroup({
-  nombre: new FormControl('', [Validators.required]),
+    nombre: new FormControl('', [Validators.required]),
   });
 
   ngOnInit() {
@@ -91,7 +90,7 @@ export class EspeciesFormComponent {
       }
     }
   }
-  
+
   cerrarModal() {
     this.dialogRef.close();
   }

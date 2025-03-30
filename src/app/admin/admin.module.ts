@@ -27,6 +27,10 @@ import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-f
 import { PreguntasFormComponent } from './preguntas-frecuentes/preguntas-form/preguntas-form.component';
 import { EspeciesComponent } from './especies/especies.component';
 import { EspeciesFormComponent } from './especies/especies-form/especies-form.component';
+import { RazasFormComponent } from './razas/razas-form/razas-form.component';
+import { RazasComponent } from './razas/razas.component';
+import { GenerosComponent } from './generos/generos.component';
+import { GenerosFormComponent } from './generos/generos-form/generos-form.component';
 
 
 
@@ -44,6 +48,10 @@ import { EspeciesFormComponent } from './especies/especies-form/especies-form.co
     MascotasFormComponent,
     EspeciesComponent,
     EspeciesFormComponent,
+    RazasComponent,
+    RazasFormComponent,
+    GenerosComponent,
+    GenerosFormComponent,
     ConfiguracionInicialComponent,
     EventosComponent,
     AdopcionesComponent,
