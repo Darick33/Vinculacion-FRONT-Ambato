@@ -23,9 +23,9 @@ private subscriptions: Subscription = new Subscription();
   apellido: new FormControl<string | null>('', Validators.required),
   email: new FormControl<string | null>('', [Validators.required, Validators.email]),
   contacto: new FormControl<string | null>('', Validators.required),
-  fecha: new FormControl<string | null>('', Validators.required),
+  fecha: new FormControl<string | null>(''),
   direccion: new FormControl<string | null>('', Validators.required),
-  datos: new FormControl<string | null>('', Validators.required)
+  datos: new FormControl<string | null>('',)
   });
 
 // Lista de archivos cargados

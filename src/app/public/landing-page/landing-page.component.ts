@@ -40,8 +40,9 @@ cantidad: number = 3;
     });
   }
 
-  OpenAdopciones() {
+  OpenAdopciones(idmascota: string) {
     const dialogRef = this.dialog.open(AdopcionesFormComponent, {
+      data: { idmascota: idmascota } // Pasamos el ID
     });
     dialogRef.afterClosed().subscribe(() => {
     });

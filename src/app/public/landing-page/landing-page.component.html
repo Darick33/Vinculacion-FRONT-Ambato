@@ -72,7 +72,7 @@
             <!-- Card 1 -->
             <div *ngFor="let mascota of mascotas" 
             class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden cursor-pointer"
-            (click)="OpenAdopciones()">
+            (click)="OpenAdopciones(mascota.id ?? '')">
             <img src="../../../assets/images/perro2.png" class="w-full h-96 object-cover" [alt]="mascota.nombre">
             <div class="p-6">
                 <h5 class="text-xl font-semibold text-gray-800">{{ mascota.nombre }}</h5>
