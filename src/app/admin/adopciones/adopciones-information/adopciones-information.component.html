@@ -1,0 +1,58 @@
+<div class="w-[700px] min-w-[700px] mx-auto bg-white rounded-lg p-6 shadow-lg">
+    <header class="text-center mb-4">
+      <img class="w-16 mx-auto mb-3" src="../../assets/images/logo.png" alt="Logo">
+      <h2 class="text-2xl font-semibold text-gray-800">Detalles del Adoptante</h2>
+    </header>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <p class="text-gray-600 font-semibold">Nombre:</p>
+        <p class="text-gray-800 truncate">{{ adopcionInfo?.tramite?.nombre }} {{ adopcionInfo?.tramite?.apellido }}</p>
+      </div>
+      <div>
+        <p class="text-gray-600 font-semibold">Correo Electrónico:</p>
+        <p class="text-gray-800 truncate">{{ adopcionInfo?.tramite?.email }}</p>
+      </div>
+      <div>
+        <p class="text-gray-600 font-semibold">Contacto:</p>
+        <p class="text-gray-800 truncate">{{ adopcionInfo?.tramite?.contacto }}</p>
+      </div>
+      <div>
+        <p class="text-gray-600 font-semibold">Fecha:</p>
+        <p class="text-gray-800">{{ adopcionInfo?.tramite?.fecha | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+      </div>
+      <div>
+        <p class="text-gray-600 font-semibold">Direccion:</p>
+        <p class="text-gray-800">{{ adopcionInfo?.tramite?.direccion }}</p>
+      </div>
+    </div>
+  
+    <div class="mt6">
+        <h2 class="text-2xl font-semibold text-gray-800">Detalles de la Mascota</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <div class="mt-4">
+          <p class="text-gray-600 font-semibold">Nombre:</p>
+          <p class="text-gray-800 break-words">{{ adopcionInfo?.mascota?.nombre }}</p>
+        </div>
+      <div class="mt-4">
+        <p class="text-gray-600 font-semibold">Edad:</p>
+        <p class="text-gray-800 break-words">{{ adopcionInfo?.mascota?.edad }}</p>
+      </div>
+      <div class="mt-4">
+        <p class="text-gray-600 font-semibold">Caracter:</p>
+        <p class="text-gray-800 break-words">{{ adopcionInfo?.mascota?.caracter }}</p>
+      </div>
+    </div>
+
+
+  
+    <!-- Lista de archivos adjuntos -->
+    <!-- <div class="mt-4" *ngIf="denuncia.files && denuncia.files.length">
+      <p class="text-gray-600 font-semibold">Archivos Adjuntos:</p>
+      <ul class="list-disc pl-5 text-gray-800">
+        <li *ngFor="let file of denuncia.files">{{ file.name }} ({{ (file.size / 1024).toFixed(2) }} KB)</li>
+      </ul>
+    </div> -->
+  </div>

@@ -31,6 +31,7 @@ import { RazasFormComponent } from './razas/razas-form/razas-form.component';
 import { RazasComponent } from './razas/razas.component';
 import { GenerosComponent } from './generos/generos.component';
 import { GenerosFormComponent } from './generos/generos-form/generos-form.component';
+import { AdopcionesInformationComponent } from './adopciones/adopciones-information/adopciones-information.component';
 
 
 
@@ -58,7 +59,8 @@ import { GenerosFormComponent } from './generos/generos-form/generos-form.compon
     DenunciasComponent,
     DenunciasInformationComponent,
     PreguntasFrecuentesComponent,
-    PreguntasFormComponent
+    PreguntasFormComponent,
+    AdopcionesInformationComponent
   ],
   imports: [
     CommonModule,
