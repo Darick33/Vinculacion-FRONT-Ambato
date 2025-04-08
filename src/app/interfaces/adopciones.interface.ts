@@ -1,5 +1,5 @@
 export interface Adopcion {
-  id: number;
+  id?: number;
   idmascota: string;
   idtramite: string;
   estaActivo?: boolean;

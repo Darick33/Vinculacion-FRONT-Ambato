@@ -41,7 +41,23 @@
              type="text" id="address" formControlName="direccion">
     </div>
 
+    <h2>Mascota</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+      <div>
+        <label class="block mb-2 text-[var(--dark)]" for="pet-name">Nombre de la Mascota</label>
+        <label for="">{{mascota?.nombre}}</label>
+      </div>
+      <div>
+        <label class="block mb-2 text-[var(--dark)]" for="age">Edad</label>
+        <label for="">{{mascota?.edad}}</label>
 
+      </div>
+      <div>
+        <label class="block mb-2 text-[var(--dark)]" for="character">Caracter</label>
+        <label for="">{{mascota?.caracter}}</label>
+
+      </div>
+    </div>
 
 
     <div class="mt-6">
