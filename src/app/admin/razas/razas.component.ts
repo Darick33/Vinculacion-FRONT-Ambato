@@ -55,6 +55,7 @@ export class RazasComponent {
 
   loadRazas(page: number = 1, filter: string = ''): void {
     const subscription = this.razasService.getRazas(page, this.pageSize).subscribe(response => {
+      this.dataSource = new MatTableDataSource(response.items);
       this.totalRazas = response.totalCount;
       this.razas = response.items;
       this.applyClientFilter();

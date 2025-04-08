@@ -13,6 +13,7 @@ import { PreguntasFrecuentesComponent } from './preguntas-frecuentes/preguntas-f
 import { EspeciesComponent } from './especies/especies.component';
 import { GenerosComponent } from './generos/generos.component';
 import { RazasComponent } from './razas/razas.component';
+import { RolesComponent } from './roles/roles.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'razas', component: RazasComponent },
       { path: 'generos', component: GenerosComponent },
       { path: 'preguntas-frecuentes', component: PreguntasFrecuentesComponent },
+      {path: 'roles', component: RolesComponent},
       // { path: 'roles', component: LoginComponent },
       { path: '', redirectTo: 'public/landing', pathMatch: 'full' } // Redirección por defecto
     ]

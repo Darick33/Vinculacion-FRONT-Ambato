@@ -57,10 +57,14 @@ export class GenerosComponent {
 
   loadGeneros(page: number = 1, filter: string = ''): void {
     const subscription = this.GenerosService.getGeneros(page, this.pageSize).subscribe(response => {
-      this.totalGeneros = response.totalCount;
-      this.dataSource.data = response.data;
-      this.dataSource.paginator = this.paginator!;
-      this.dataSource.sort = this.sort!;
+      this.dataSource = new MatTableDataSource(response.items);
+this.generos = response.items;
+this.totalGeneros = response.totalCount;
+// ❌ Esto está mal y pisa la data correcta:
+// this.dataSource.data = response.data;
+this.dataSource.paginator = this.paginator!;
+this.dataSource.sort = this.sort!;
+
     });
     this.subscriptions.add(subscription);
   }

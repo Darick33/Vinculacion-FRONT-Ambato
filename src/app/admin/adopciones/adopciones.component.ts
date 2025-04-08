@@ -3,7 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { PokemonService } from 'src/app/services/pokemmon.service';
-import { Subscription } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { Mascotas } from 'src/app/interfaces/mascotas.interface';
 import { AdopcionesFormComponent } from 'src/app/public/adopciones/adopciones.component';
@@ -30,7 +30,7 @@ export class AdopcionesComponent {
   adopciones: Adopcion[] | undefined;
   tramites: Tramite[]   = [];
   mascotas: Mascotas[] = [];
-  adocionesInfo: { mascota: Mascotas, tramite: Tramite }[] = [];
+  adocionesInfo: {id?:string, mascota: Mascotas, tramite: Tramite }[] = [];
 
   private subscriptions: Subscription = new Subscription(); 
   
@@ -114,13 +114,18 @@ export class AdopcionesComponent {
       this.adocionesInfo = []; // limpiar
       const observables = this.adopciones.map(adopcion => {
         return forkJoin({
+          id: of(adopcion.id ?? ''), // Ensure id is not undefined and wrap in observable
           mascota: this.mascotasService.getMascotaById(adopcion.idmascota),
           tramite: this.tramitesService.getTramiteById(adopcion.idtramite)
         });
       });
   
       forkJoin(observables).subscribe(resultados => {
-        this.adocionesInfo = resultados;
+        this.adocionesInfo = resultados.map(resultado => ({
+          ...resultado,
+          id: String(resultado.id) // Convert id to string
+        }));
+        
         this.dataSource.data = this.adocionesInfo;
         console.log(this.adocionesInfo);
       });

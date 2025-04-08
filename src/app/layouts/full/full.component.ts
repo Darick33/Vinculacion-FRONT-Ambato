@@ -49,11 +49,11 @@ export class FullComponent {
       icon: "alert-triangle",
       menu: "Configuracion Inicial",
     },
-    {
-      link: "/admin/menu",
-      icon: "menu",
-      menu: "Menus",
-    },
+    // {
+    //   link: "/admin/menu",
+    //   icon: "menu",
+    //   menu: "Menus",
+    // },
     {
       link: "/admin/mascotas",
       icon: "heart", 
@@ -61,22 +61,22 @@ export class FullComponent {
     },
     {
       link: "/admin/especies",
-      icon: "heart", 
+      icon: "activity", 
       menu: "Especies",
     },
     {
       link: "/admin/razas",
-      icon: "heart", 
+      icon: "pen-tool", 
       menu: "Razas",
     },
     {
       link: "/admin/generos",
-      icon: "heart", 
+      icon: "feather", 
       menu: "Generos",
     },
     {
       link: "/admin/adopciones",
-      icon: "book", 
+      icon: "gitlab", 
       menu: "Adopciones",
     },
     {
@@ -99,10 +99,10 @@ export class FullComponent {
       icon: "help-circle",
       menu: "Preguntas Frecuentes",
     },
-    {
-      link: "/admin/chatbot",
-      icon: "message-circle",
-      menu: "Configuracion de ChatBot",
-    },
+    // {
+    //   link: "/admin/chatbot",
+    //   icon: "message-circle",
+    //   menu: "Configuracion de ChatBot",
+    // },
   ]
 }
