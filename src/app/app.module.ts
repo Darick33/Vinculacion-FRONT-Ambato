@@ -35,7 +35,9 @@ import { UtilsModule } from './utils/utils.module';
     DashboardModule,
     ComponentsModule,
     FormsModule,
-    UtilsModule
+    UtilsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

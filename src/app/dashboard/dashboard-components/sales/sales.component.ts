@@ -13,88 +13,46 @@ import {
   ApexGrid
 } from 'ng-apexcharts';
 
-
 export interface activeusercardChartOptions {
-  series: ApexAxisChartSeries;
-  dataLabels: ApexDataLabels;
+  series: number[]; // Cambiado para gráficos de pastel
   chart: ApexChart;
+  labels: string[];  // Etiquetas para el gráfico de pastel
   legend: ApexLegend;
-  xaxis: ApexXAxis;
-  grid: ApexGrid;
-  stroke: ApexStroke;
-  plotOptions: ApexPlotOptions;
-  fill: ApexFill;
+  dataLabels: ApexDataLabels;
   tooltip: ApexTooltip;
+  fill: ApexFill;
 }
-
 
 @Component({
   selector: 'app-sales',
   templateUrl: './sales.component.html',
   styleUrls: ['./sales.component.scss'],
-
 })
 export class SalesComponent {
-
   @ViewChild("activeusercardchart") chart1: ChartComponent = Object.create(null);
-  public activeusercardChartOptions !: Partial<activeusercardChartOptions> | any;
+  public activeusercardChartOptions!: Partial<activeusercardChartOptions> | any;
 
   constructor() {
-    // active users
+    // Gráfico de pastel
     this.activeusercardChartOptions = {
-      series: [
-        {
-          name: 'Ample Admin',
-          data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
-          color: "#fb9678",
-        },
-        {
-          name: 'Pixel Admin',
-          data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
-          color: "#03c9d7",
-        },
-      ],
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      },
+      series: [45, 25, 30],  // Los valores de las partes del pastel
       chart: {
-        toolbar: {
-          show: false,
-        },
-        type: 'bar',
+        type: 'donut',  // Tipo de gráfico: pie
         height: 300,
-
       },
+      labels: ['Ample Admin', 'Pixel Admin', 'Other Users'],  // Etiquetas del gráfico
       legend: {
-        show: false,
+        show: true,  // Muestra la leyenda
       },
-
-      tooltip: {
-        theme: "dark"
-      },
-
-      grid: {
-        show: false,
-      },
-
       dataLabels: {
-        enabled: false,
+        enabled: true,  // Muestra los valores dentro de las secciones
       },
-
-      stroke: {
-        show: true,
-        width: 5,
-        colors: ['none']
+      tooltip: {
+        theme: "dark",  // Tema del tooltip
       },
-
-      plotOptions: {
-        bar: {
-          columnWidth: '45%',
-          borderRadius: 8,
-        },
+      fill: {
+        opacity: 1,
       },
-    }
+    };
   }
-
-
 }

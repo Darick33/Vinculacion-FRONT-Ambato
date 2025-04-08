@@ -6,7 +6,7 @@ export interface Rol {
   estaactivo?: boolean;
 }
 
-export interface RazasResponse {
+export interface RolResponse {
     items: Rol[];
     pageNumber: number;
     pageSize: number;
