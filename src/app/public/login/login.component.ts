@@ -11,4 +11,7 @@ export class LoginComponent {
   goToHome() {
     this.router.navigate(['/public/registro']);
   }
+  goToLogin() {
+    this.router.navigate(['/admin/inicio']);
+  }
 }

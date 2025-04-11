@@ -13,11 +13,10 @@
           <input class="w-full p-2 mb-6 text-[var(--primary)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="password" name="password">
         </div>
         <div>          
-          <input class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" type="submit">
+          <input class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" (click)="goToLogin()" type="submit">
         </div>       
       </form>  
       <footer>
-        <button class="text-[var(--primary)] hover:text-[var(--secondary)] text-sm float-left" href="#">Olvidaste la Clave?</button>
         <button class="text-[var(--primary)] hover:text-[var(--secondary)] text-sm float-right" (click)="goToHome()">Crea una Cuenta</button>
       </footer>   
   </div>
