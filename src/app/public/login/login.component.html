@@ -1,23 +1,52 @@
 <div class="flex h-screen bg-gray-100">
   <div class="w-full max-w-xs m-auto bg-[var(--light)] rounded p-5">   
-      <header>
-        <img class="w-20 mx-auto mb-5" src="../../assets/images/logo.png" />
-      </header>   
-      <form>
-        <div>
-          <label class="block mb-2 text-[var(--primary)]" for="username">Usuario</label>
-          <input class="w-full p-2 mb-6 text-[var(--primary)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="text" name="username">
+    <header>
+      <img class="w-20 mx-auto mb-5" src="../../assets/images/logo.png" />
+    </header>   
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div>
+        <label class="block mb-2 text-[var(--primary)]" for="email">Correo Electrónico</label>
+        <input 
+          class="w-full p-2 mb-6 text-[var(--primary)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]"
+          id="email" 
+          formControlName="email"
+          type="email"
+          placeholder="Ingresa tu correo"
+        />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-red-500 text-sm">
+          <div *ngIf="f['email'].errors?.['required']">El correo es obligatorio.</div>
+          <div *ngIf="f['email'].errors?.['email']">Por favor ingresa un correo válido.</div>
         </div>
-        <div>
-          <label class="block mb-2 text-[var(--primary)]" for="password">Clave</label>
-          <input class="w-full p-2 mb-6 text-[var(--primary)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]" type="password" name="password">
+      </div>
+
+      <div>
+        <label class="block mb-2 text-[var(--primary)]" for="password">Clave</label>
+        <input 
+          class="w-full p-2 mb-6 text-[var(--primary)] border-b-2 border-[var(--primary)] outline-none focus:bg-[var(--light)]"
+          id="password"
+          formControlName="password"
+          type="password"
+          placeholder="Ingresa tu clave"
+        />
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-red-500 text-sm">
+          <div *ngIf="f['password'].errors?.['required']">La contraseña es obligatoria.</div>
+          <div *ngIf="f['password'].errors?.['minlength']">La contraseña debe tener al menos 6 caracteres.</div>
         </div>
-        <div>          
-          <input class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded" (click)="goToLogin()" type="submit">
-        </div>       
-      </form>  
-      <footer>
-        <button class="text-[var(--primary)] hover:text-[var(--secondary)] text-sm float-right" (click)="goToHome()">Crea una Cuenta</button>
-      </footer>   
+      </div>
+
+      <div>
+        <button 
+          class="w-full bg-[var(--primary)] hover:bg-[var(--dark)] text-white font-bold py-2 px-4 mb-6 rounded"
+          type="submit"
+          [disabled]="loginForm.invalid">
+          Iniciar sesión
+        </button>
+      </div>       
+    </form>  
+
+    <footer>
+      <button class="text-[var(--primary)] hover:text-[var(--secondary)] text-sm float-right" (click)="goToHome()">Crea una Cuenta</button>
+    </footer>   
   </div>
 </div>
