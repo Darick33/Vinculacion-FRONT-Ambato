@@ -31,28 +31,136 @@ export interface activeusercardChartOptions {
 export class SalesComponent {
   @ViewChild("activeusercardchart") chart1: ChartComponent = Object.create(null);
   public activeusercardChartOptions!: Partial<activeusercardChartOptions> | any;
+  public activeusercardChartOptions2!: Partial<activeusercardChartOptions> | any;
+  public adopcionesPorMesChartOptions!: Partial<activeusercardChartOptions> | any;
+  public adopcionesPorAlbergueChartOptions!: Partial<activeusercardChartOptions> | any;
 
   constructor() {
     // Gráfico de pastel
     this.activeusercardChartOptions = {
-      series: [45, 25, 30],  // Los valores de las partes del pastel
+      series: [60, 25, 15],
       chart: {
-        type: 'pie',  // Tipo de gráfico: pie
+        type: 'pie',
         height: 300,
       },
-      labels: ['Ample Admin', 'Pixel Admin', 'Other Users'],  // Etiquetas del gráfico
+      labels: ['Perros 🐶', 'Gatos 🐱', 'Otros 🐰🐦'],
       legend: {
-        show: true,  // Muestra la leyenda
+        show: true,
+        position: 'bottom'
       },
       dataLabels: {
-        enabled: true,  // Muestra los valores dentro de las secciones
+        enabled: true,
+        formatter: function (val: number) {
+          return val.toFixed(0) + '%';
+        }
       },
       tooltip: {
-        theme: "dark",  // Tema del tooltip
+        theme: "dark",
       },
       fill: {
         opacity: 1,
-      },
+      }
     };
+    this.activeusercardChartOptions2 = {
+      series: [40, 35, 25],
+      chart: {
+        type: 'pie',
+        height: 300,
+      },
+      labels: ['Campaña “Adopta con Amor”', 'Feria Animal 2024', 'Red de Rescate Local'],
+      legend: {
+        show: true,
+        position: 'right'
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: function (val: number) {
+          return val.toFixed(0) + '%';
+        }
+      },
+      tooltip: {
+        theme: "dark",
+      },
+      fill: {
+        opacity: 1,
+      }
+    };
+    this.adopcionesPorMesChartOptions = {
+      series: [
+        {
+          name: 'Adopciones',
+          data: [12, 18, 25, 30, 28, 22], // Ejemplo: de enero a junio
+        },
+      ],
+      chart: {
+        type: 'bar',
+        height: 350,
+      },
+      xaxis: {
+        categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '50%',
+          endingShape: 'rounded'
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        theme: 'dark'
+      },
+      grid: {
+        borderColor: '#e7e7e7',
+        row: {
+          colors: ['#f3f3f3', 'transparent'],
+          opacity: 0.5
+        },
+      }
+    };
+    this.adopcionesPorAlbergueChartOptions = {
+      series: [
+        {
+          name: 'Total Adopciones',
+          data: [45, 38, 22, 17], // Total por albergue
+        },
+      ],
+      chart: {
+        type: 'bar',
+        height: 350,
+      },
+      xaxis: {
+        categories: ['Huellitas de Amor', 'Refugio Esperanza', 'Manada Feliz', 'Patitas Unidas'],
+      },
+      plotOptions: {
+        bar: {
+          distributed: true,
+          columnWidth: '60%',
+          borderRadius: 5
+        }
+      },
+      dataLabels: {
+        enabled: true
+      },
+      tooltip: {
+        theme: 'dark'
+      },
+      fill: {
+        opacity: 1
+      },
+      legend: {
+        show: false
+      }
+    };
+    
+    
+    
+    
   }
+
 }

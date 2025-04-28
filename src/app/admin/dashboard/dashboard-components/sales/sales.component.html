@@ -14,3 +14,53 @@
     </div>
   </mat-card-content>
 </mat-card>
+<mat-card>
+  <mat-card-content>
+
+    <div>
+      <apx-chart
+        [series]="activeusercardChartOptions2.series"
+        [chart]="activeusercardChartOptions2.chart"
+        [labels]="activeusercardChartOptions2.labels"
+        [legend]="activeusercardChartOptions2.legend"
+        [dataLabels]="activeusercardChartOptions2.dataLabels"
+        [tooltip]="activeusercardChartOptions2.tooltip"
+        [fill]="activeusercardChartOptions2.fill">
+      </apx-chart>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content>
+    <div>
+      <apx-chart
+        [series]="adopcionesPorMesChartOptions.series"
+        [chart]="adopcionesPorMesChartOptions.chart"
+        [xaxis]="adopcionesPorMesChartOptions.xaxis"
+        [plotOptions]="adopcionesPorMesChartOptions.plotOptions"
+        [dataLabels]="adopcionesPorMesChartOptions.dataLabels"
+        [tooltip]="adopcionesPorMesChartOptions.tooltip"
+        [fill]="adopcionesPorMesChartOptions.fill"
+        [grid]="adopcionesPorMesChartOptions.grid">
+      </apx-chart>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- Gráfico de Barras: Adopciones por Albergue -->
+<mat-card>
+  <mat-card-content>
+    <div>
+      <apx-chart
+        [series]="adopcionesPorAlbergueChartOptions.series"
+        [chart]="adopcionesPorAlbergueChartOptions.chart"
+        [xaxis]="adopcionesPorAlbergueChartOptions.xaxis"
+        [plotOptions]="adopcionesPorAlbergueChartOptions.plotOptions"
+        [dataLabels]="adopcionesPorAlbergueChartOptions.dataLabels"
+        [tooltip]="adopcionesPorAlbergueChartOptions.tooltip"
+        [fill]="adopcionesPorAlbergueChartOptions.fill"
+        [legend]="adopcionesPorAlbergueChartOptions.legend">
+      </apx-chart>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -32,6 +32,17 @@ throw new Error('Method not implemented.');
     idespecie: new FormControl('', [Validators.required]),
     idraza: new FormControl('', [Validators.required]),
   });
+  files: File[] = [];
+
+// Función para manejar la carga de archivos
+onFileChange(event: any): void {
+  const fileList: FileList = event.target.files;
+  if (fileList.length > 0) {
+    for (let i = 0; i < fileList.length; i++) {
+      this.files.push(fileList[i]);
+    }
+  }
+}
   ngOnInit() {
     console.log("ID recibido:", this.data.id);
     this.getRazas();

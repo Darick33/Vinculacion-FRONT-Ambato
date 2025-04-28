@@ -34,11 +34,11 @@ export class FullComponent {
       icon: "home",
       menu: "Dashboard",
     },
-    {
-      link: "/admin/usuarios",
-      icon: "users",
-      menu: "Usuarios",
-    },
+    // {
+    //   link: "/admin/usuarios",
+    //   icon: "users",
+    //   menu: "Usuarios",
+    // },
     {
       link: "/admin/roles",
       icon: "shield",
@@ -79,16 +79,16 @@ export class FullComponent {
       icon: "gitlab", 
       menu: "Adopciones",
     },
-    {
-      link: "/admin/eventos",
-      icon: "calendar",
-      menu: "Eventos",
-    },
-    {
-      link: "/admin/campanias",
-      icon: "book",
-      menu: "Campañas",
-    },
+    // {
+    //   link: "/admin/eventos",
+    //   icon: "calendar",
+    //   menu: "Eventos",
+    // },
+    // {
+    //   link: "/admin/campanias",
+    //   icon: "book",
+    //   menu: "Campañas",
+    // },
     {
       link: "/admin/denuncias",
       icon: "alert-circle", 

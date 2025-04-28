@@ -10,35 +10,68 @@ export class ProductosCampanasComponent implements OnInit {
 
   ngOnInit() {
     this.post = {
-      title: 'Título del Post',
+      title: 'FRENA LA VIOLENCIA 🐾',
       image: '../../../assets/images/campana1.webp',
-      content: `
-        Campaña Solidaria: Productos y Servicios para Apoyar a una Fundación de Perros.
-        En un mundo donde miles de perros sufren abandono y maltrato, las fundaciones dedicadas al rescate y cuidado de estos animales desempeñan un papel fundamental. Sin embargo, para continuar con su noble labor, estas organizaciones requieren apoyo constante.
-        
-        Productos Solidarios
-        
-          Ropa y Accesorios Temáticos: Camisetas, sudaderas, gorras y bolsos con diseños exclusivos para amantes de los perros.
-          Pulseras y Llaveros Personalizados: Accesorios con mensajes inspiradores y figuras de perros.
-          Alimentos y Suministros para Mascotas: Venta de alimentos de alta calidad y juguetes, con un porcentaje destinado a refugios.
-          Calendarios y Agendas Solidarias: Ilustrados con imágenes de perros rescatados y sus historias de superación.
-        
-
-        Servicios en Beneficio de la Fundación
-        
-          Jornadas de Baño y Peluquería Canina: Parte del pago se dona para financiar tratamientos médicos y alimentación.
-          Sesiones Fotográficas con Tu Mascota: Captura recuerdos inolvidables mientras apoyas a los perros en necesidad.
-          Talleres y Charlas sobre Tenencia Responsable: Educación sobre adopción, cuidados y esterilización.
-          Eventos y Ferias de Adopción: Promoción de la adopción responsable en eventos comunitarios.
-        
-      `,
+      gallery: [
+        { url: '../../../assets/images/fauna1.jpg' },
+        { url: '../../../assets/images/fauna2.jpg' },
+        { url: '../../../assets/images/fauna3.jpg' },
+      ],
+      sections: [
+        {
+          title: '¿Qué es la Fauna Urbana?',
+          content: `La fauna urbana es el conjunto de especies animales no humanas que se han adaptado y sobreviven en las ciudades. Incluye perros, gatos, aves, roedores, insectos, reptiles y anfibios.`
+        },
+        {
+          title: 'Categorías de Especies',
+          content: `Domésticos, Introducidos y Silvestres.`
+        },
+        {
+          title: 'Proyecto de Ley',
+          content: `Ley Orgánica para la Promoción, Protección y Defensa de los Derechos de los Animales no Humanos.`
+        },
+        {
+          title: 'Puntos Controversiales',
+          content: `• Jornada laboral para animales de trabajo.
+• Prohibiciones de pesticidas, exhibiciones de pollos asados y faenamiento sin aturdimiento.
+• Restricciones en pesca y faenamiento.`
+        },
+        {
+          title: 'Gestión de los GAD\'s',
+          content: `Los municipios gestionan planificación, regulación, control y protección de fauna urbana.`
+        },
+        {
+          title: 'Protecciones legales',
+          content: `El Código Orgánico Integral Penal (COIP) tipifica delitos como lesiones, abuso sexual, muerte y maltrato de animales.`
+        },
+        {
+          title: 'Responsabilidad de los tenedores',
+          content: `Respetar el comportamiento natural del animal: alimentación, refugio, trato digno y atención veterinaria.`
+        },
+        {
+          title: 'Sanciones',
+          content: `• Multas económicas
+• Retiro y adopción forzada
+• Prohibición de tenencia
+• Servicio comunitario
+• Pago de gastos veterinarios`
+        }
+      ],
       media: [
-        { type: 'video', url: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-        { type: 'audio', url: 'https://www.w3schools.com/html/horse.mp3' }
+        {
+          type: 'video',
+          url: '../../../assets/images/fauna.mp4'
+        }
       ],
       attachments: [
-        { name: 'Documento PDF', url: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-        { name: 'Archivo ZIP', url: 'https://file-examples.com/wp-content/uploads/2017/02/zip_2MB.zip' }
+        {
+          name: 'Fauna Urbana',
+          url: '../../../assets/TRIPTICO FAUNA URBANA.pdf'
+        },
+        // {
+        //   name: 'Lista de Albergues Beneficiados.docx',
+        //   url: 'https://example.com/albergues-beneficiados.docx'
+        // }
       ]
     };
   }

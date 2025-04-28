@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Mascotas } from 'src/app/interfaces/mascotas.interface';
 import { MascotasService } from 'src/app/services/mascotas.service';
 import { AdopcionesFormComponent } from '../adopciones/adopciones.component';
 import { DenunciasFormComponent } from '../denuncias/denuncias.component';
+import { ConfiguracionService } from 'src/app/services/configuracion.service';
+import { ChatComponent } from '../chat/chat.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -13,9 +15,16 @@ import { DenunciasFormComponent } from '../denuncias/denuncias.component';
 })
 export class LandingPageComponent {
 cantidad: number = 3;
+info: any;
+@ViewChild(ChatComponent) chatComponent!: ChatComponent;
+
+abrirChatDesdePadre() {
+  this.chatComponent.toggleChat();
+}
   mascotas: Mascotas[] = [];
   constructor(private router: Router,
-    public dialog: MatDialog, private mascotasService: MascotasService
+    public dialog: MatDialog, private mascotasService: MascotasService,
+    private configuracionService: ConfiguracionService,
 
   ) { }
   ngOnInit(): void {
@@ -24,7 +33,15 @@ cantidad: number = 3;
       console.log(this.mascotas);
       this.cantidad = this.mascotas.length
     });
+    this.getInfo();
   }
+  getInfo() {
+    this.configuracionService.getConfigurationById().subscribe((response) => {
+      console.log(response);
+      this.info = response;
+    });
+  }
+
   goToHome() {
     this.router.navigate(['/public/post']);
   }
@@ -48,3 +65,4 @@ cantidad: number = 3;
     });
   }
 }
+

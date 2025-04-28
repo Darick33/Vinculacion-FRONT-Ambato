@@ -12,6 +12,13 @@ import { Router } from '@angular/router';
   styleUrl: './mascotas-list.component.scss'
 })
 export class MascotasListComponent {
+/**
+ * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+ * 🔥 sdsdwdw
+ * 🧠 Autor: TuNombresdw
+ * 📅 Fecha: 18
+ * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+ */
 
   constructor(private mascotasService: MascotasService, public dialog: MatDialog, private router: Router,){}
   mascotas: Mascotas[] = [];
@@ -33,12 +40,16 @@ export class MascotasListComponent {
     });
 
   }
-  OpenAdopciones() {
-      const dialogRef = this.dialog.open(AdopcionesFormComponent, {
-      });
-      dialogRef.afterClosed().subscribe(() => {
-      });
-    }
+  trackByFn(index: number, item: any): any {
+    return item.id; // Replace 'id' with the unique identifier of your items
+}
+  OpenAdopciones(idmascota: string, ) {
+    const dialogRef = this.dialog.open(AdopcionesFormComponent, {
+      data: { idmascota: idmascota, idtramite: '' } // Pasamos el ID
+    });
+    dialogRef.afterClosed().subscribe(() => {
+    });
+  }
     goToLogin() {
       this.router.navigate(['/public/login']);
     

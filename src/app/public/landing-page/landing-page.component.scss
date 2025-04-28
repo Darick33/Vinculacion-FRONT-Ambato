@@ -17,6 +17,9 @@
 .navbar-collapse {
     display: block !important;
 }
+html {
+    scroll-behavior: smooth;
+  }
 .carousel-item {
     transition: transform 1s ease;
     &:hover img {

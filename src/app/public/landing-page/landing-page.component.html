@@ -17,16 +17,18 @@
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
         <a href="#" class="flex items-center space-x-2">
             <img src="../../../assets/images/logo.png" alt="Logo" class="w-12 h-auto">
-            <span class="text-2xl font-bold text-gray-800">Protección Animal</span>
+            <span class="text-2xl font-bold text-gray-800">{{info.nombre}}</span>
         </a>
         <div class="hidden md:flex space-x-8">
-            <a href="#adopcion" class="text-lg font-medium text-gray-800 hover:text-primary">Adopción</a>
-            <a href="#quienes-somos" class="text-lg font-medium text-gray-800 hover:text-primary">Quiénes Somos</a>
-            <a href="#proyectos" class="text-lg font-medium text-gray-800 hover:text-primary">Proyectos</a>
-            <a href="#campanas" class="text-lg font-medium text-gray-800 hover:text-primary">Campañas</a>
-            <a href="#denuncias" class="text-lg font-medium text-gray-800 hover:text-primary">Denuncias</a>
-            <a href="#ubicacion" class="text-lg font-medium text-gray-800 hover:text-primary">Ubicación</a>
-            <a href="#contacto" class="text-lg font-medium text-gray-800 hover:text-primary">Contacto</a>
+            
+            <a href="/public/landing#adopcion" class="text-lg font-medium text-gray-800 hover:text-primary">Adopción</a>
+            <a href="/public/landing#quienes-somos" class="text-lg font-medium text-gray-800 hover:text-primary">Quiénes Somos</a>
+            <a href="/public/landing#proyectos" class="text-lg font-medium text-gray-800 hover:text-primary">Proyectos</a>
+            <a href="/public/landing#campanas" class="text-lg font-medium text-gray-800 hover:text-primary">Campañas</a>
+            <a href="/public/landing#denuncias" class="text-lg font-medium text-gray-800 hover:text-primary">Denuncias</a>
+            <a href="/public/landing#ubicacion" class="text-lg font-medium text-gray-800 hover:text-primary">Ubicación</a>
+            <a href="/public/landing#contacto" class="text-lg font-medium text-gray-800 hover:text-primary">Contacto</a>
+            <a (click)="abrirChatDesdePadre()" class="text-lg font-medium text-gray-800 hover:text-primary cursor-pointer">ChatBot</a>
         </div>
         <button (click)="goToLogin()" class="bg-primary text-white px-6 py-2 rounded-md text-lg hover:bg-primary transition duration-300 hidden md:block" >LOGIN</button>
         <button class="md:hidden bg-primary text-white p-2 rounded-md" id="menu-toggle">
@@ -47,18 +49,38 @@
     </div>
 </nav>
 <!-- HERO IMAGE -->
-<div class="container mx-auto flex flex-col-reverse md:flex-row items-center my-16 px-9 ">
-    <div class="md:w-1/2 text-center md:text-left mx-5">
-        <h2 class="text-4xl font-semibold text-gray-800">Bienvenidos a Protección Animal</h2>
-        <p class="mt-4 text-lg text-gray-700">Nos dedicamos a la protección y bienestar de los animales en situación de calle. A través de adopciones, campañas de concienciación y rescates, buscamos brindarles un hogar lleno de amor.</p>
+<div id="quienes-somos" class="container mx-auto flex flex-col-reverse md:flex-row items-center my-16 px-6 md:px-12">
+    <div class="md:w-1/2 text-center md:text-left mx-5 space-y-6">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+        Bienvenidos a <span class="text-primary">{{info.nombre}}</span>
+      </h2>
+      
+      <div>
+        <h3 class="text-2xl font-semibold text-secondary">Quienes Somos</h3>
+        <p class="mt-2 text-lg text-gray-700">{{info.quienesSomos}}</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-secondary">Misión</h3>
+        <p class="mt-2 text-lg text-gray-700">{{info.mision}}</p>
+      </div>
+  
+      <div>
+        <h3 class="text-2xl font-semibold text-secondary">Visión</h3>
+        <p class="mt-2 text-lg text-gray-700">{{info.vision}}</p>
+      </div>
+  
     </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-        <img src="../../../assets/images/principal-landing.jpg" class="w-full h-full object-cover rounded-lg" alt="Adopción de Mascotas">
+  
+    <div class="md:w-1/2 mt-10 md:mt-0">
+      <div class="w-full h-full overflow-hidden rounded-2xl shadow-lg">
+        <img src="../../../assets/images/principal-landing.jpg" class="w-full h-full object-cover" alt="Adopción de Mascotas">
+      </div>
     </div>
-</div>
+  </div>
+  
 
 <!-- SECCIÓN adopcion -->
-<div id="campanas" class="container mx-auto my-20 text-center">
+<div id="adopcion" class="container mx-auto my-20 text-center">
     <h3 class="text-3xl font-semibold text-gray-800 mb-10">Adopciones</h3>
     <div class="flex justify-center">
         <div 
@@ -98,45 +120,50 @@
 
 
 <!-- SECCIÓN CAMPAÑAS -->
-<div id="campanas2" class="container mx-auto my-20 text-center">
+<div id="campanas" class="container mx-auto my-20 text-center">
     <h3 class="text-3xl font-semibold text-gray-800 mb-10">Campañas</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- <div class="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-8"> -->
+    <div class="flex flex-wrap justify-center gap-8">
         <!-- Card 1 -->
         <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana1.webp" alt="Campaña 1" class="w-full h-56 object-cover rounded-t-lg p-6">
             <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">Productos y Servicios</h5>
-                <p class="text-gray-700">Puedes colaborar mediante la compra de productos.</p>
+                <h5 class="text-xl font-semibold text-gray-800"> FRENA LA VIOLENCIA</h5>
+                <p class="text-gray-700">Ley Orgánica 
+                    para la Promoción,
+                    Protección y Defensa de los
+                    Derechos de los Animales no
+                    Humanos</p>
                 <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
         </div>
         <!-- Card 2 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
+        <!-- <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana2.jpg" alt="Campaña 2" class="w-full h-56 object-cover rounded-t-lg p-6">
             <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">Patrocina Empresarial</h5>
+                <h5 class="text-xl font-semibold text-gray-800">Adopta y vive Feliz</h5>
                 <p class="text-gray-700">Conviértete en un patrocinador de nuestra causa.</p>
                 <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
-        </div>
+        </div> -->
         <!-- Card 3 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
+        <!-- <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
             <img src="../../../assets/images/campana3.jpg" alt="Campaña 3" class="w-full h-56 object-cover rounded-t-lg p-6">
             <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">Donaciones por PayPal</h5>
+                <h5 class="text-xl font-semibold text-gray-800">Esperanza de Nueva vida</h5>
                 <p class="text-gray-700">Ayúdanos con una donación por PayPal.</p>
                 <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
-        </div>
+        </div> -->
         <!-- Card 4 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
-            <img src="../../../assets/images/campana2.jpg" alt="Campaña 4" class="w-full h-56 object-cover rounded-t-lg">
+        <!-- <div class="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden" (click)="goToHome()">
+            <img src="../../../assets/images/" alt="Campaña 4" class="w-full h-56 object-cover rounded-t-lg">
             <div class="p-6">
-                <h5 class="text-xl font-semibold text-gray-800">Débito Automático</h5>
+                <h5 class="text-xl font-semibold text-gray-800">Amor incondicional</h5>
                 <p class="text-gray-700">Realiza donaciones recurrentes mediante débito automático.</p>
                 <button class="text-primary hover:underline mt-4 inline-block">Más Información</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -213,21 +240,29 @@
     <h3 class="text-3xl font-semibold text-gray-800 mb-4">Ubicación</h3>
     <p class="text-lg text-gray-700 mb-6">Nos puedes encontrar en la siguiente dirección:</p>
     <div class="mb-6">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.355777688084!2d-78.6205!3d-1.2529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d377f9392f64a7%3A0xb6cc23d7367b8a35!2sAmbato%2C%20Ecuador!5e0!3m2!1ses-419!2ses!4v1614886268971!5m2!1ses-419!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.691123456789!2d-78.6205!3d-1.2529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d377f9392f64a7%3A0xb6cc23d7367b8a35!2sMunicipio%20de%20Tisaleo!5e0!3m2!1ses-419!2sec!4v1614886268971!5m2!1ses-419!2sec" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
     </div>
-</div>
+  </div>
+  
 
 <!-- FOOTER -->
-<footer class="bg-[var(--secondary)] text-white text-center py-6 mt-20">
+<footer  id="contacto" class="bg-[var(--secondary)] text-white text-center py-6 mt-20">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
                 <h5 class="text-lg font-semibold">Enlaces</h5>
                 <ul class="list-none space-y-2">
-                    <li><a href="#adopcion" class="text-white hover:text-[var(--primary)]">Adopción</a></li>
-                    <li><a href="#quienes-somos" class="text-white hover:text-[var(--primary)]">Quiénes somos</a></li>
-                    <li><a href="#proyectos" class="text-white hover:text-[var(--primary)]">Proyectos</a></li>
-                    <li><a href="#denuncias" class="text-white hover:text-[var(--primary)]">Denuncias</a></li>
+                    <li><a href="/public/landing#adopcion" class="text-white hover:text-[var(--primary)]">Adopción</a></li>
+                    <li><a href="/public/landing#quienes-somos" class="text-white hover:text-[var(--primary)]">Quiénes somos</a></li>
+                    <li><a href="/public/landing#proyectos" class="text-white hover:text-[var(--primary)]">Proyectos</a></li>
+                    <li><a href="/public/landing#denuncias" class="text-white hover:text-[var(--primary)]">Denuncias</a></li>
                 </ul>
             </div>
             <div>

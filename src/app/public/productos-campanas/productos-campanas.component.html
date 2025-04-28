@@ -1,45 +1,63 @@
-<div class="container mx-auto p-4">
-  <div class="bg-white shadow-lg rounded-lg overflow-hidden p-6">
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-40">
-      <!-- Imagen -->
+<div class="container mx-auto p-6">
+  <div class="bg-white shadow-2xl rounded-3xl overflow-hidden p-8">
+
+    <!-- Imagen principal y título -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <div class="md:col-span-1 flex justify-center">
-        <img [src]="post.image" alt="Imagen del Post" class="rounded-lg shadow-md w-full h-auto object-cover">
+        <img [src]="post.image" alt="Imagen del Post" class="rounded-3xl shadow-md w-full h-auto object-cover">
       </div>
-      
-      <div class="md:col-span-2 space-y-4">
-        <h1 class="text-3xl font-bold text-gray-800">{{ post.title }}</h1>
-        <p class="text-gray-600">{{ post.content }}</p>
+
+      <div class="md:col-span-2 flex flex-col justify-center space-y-4">
+        <h1 class="text-4xl font-extrabold text-primary-700">{{ post.title }}</h1>
+        <p class="text-gray-700 text-lg">¡Únete para proteger a quienes no tienen voz!</p>
       </div>
     </div>
 
-    <div class="mt-28 space-y-6">
-      
-      <div *ngIf="post.media?.length > 0">
-        <h2 class="text-xl font-semibold text-gray-700">Multimedia</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div *ngFor="let media of post.media">
-            <video *ngIf="media.type === 'video'" controls class="w-full rounded-lg shadow">
-              <source [src]="media.url" type="video/mp4">
-              Tu navegador no soporta videos.
-            </video>
-            <audio *ngIf="media.type === 'audio'" controls class="w-full">
-              <source [src]="media.url" type="audio/mpeg">
-              Tu navegador no soporta audio.
-            </audio>
-          </div>
+    <!-- Secciones tipo mosaico -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+      <div *ngFor="let section of post.sections; let i = index"
+           [ngClass]="{
+             'md:col-span-3': i % 4 === 0, 
+             'md:col-span-2': i % 4 === 1 || i % 4 === 2,
+             'md:col-span-6': i % 4 === 3
+           }"
+           class="bg-gray-50 p-6 rounded-2xl shadow transition-transform hover:scale-105">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ section.title }}</h2>
+        <p class="text-gray-600 whitespace-pre-line">{{ section.content }}</p>
+      </div>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <div *ngIf="post.gallery?.length > 0" class="mt-16">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Galería</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div *ngFor="let image of post.gallery">
+          <img [src]="image.url" alt="Galería" class="rounded-2xl shadow-md object-cover w-full h-64 hover:scale-105 transition-transform">
         </div>
       </div>
+    </div>
 
-      <div *ngIf="post.attachments?.length > 0">
-        <h2 class="text-xl font-semibold text-gray-700">Archivos Adjuntos</h2>
-        <ul class="list-disc pl-5 text-blue-600">
-          <li *ngFor="let file of post.attachments">
-            <a [href]="file.url" target="_blank" class="hover:underline">{{ file.name }}</a>
-          </li>
-        </ul>
+    <!-- Multimedia -->
+    <div *ngIf="post.media?.length > 0" class="mt-16">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Multimedia</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div *ngFor="let media of post.media">
+          <video *ngIf="media.type === 'video'" controls class="w-50 h-auto rounded-2xl shadow">
+            <source [src]="media.url" type="video/mp4">
+            Tu navegador no soporta videos.
+          </video>
+        </div>
       </div>
+    </div>
 
+    <!-- Archivos Adjuntos -->
+    <div *ngIf="post.attachments?.length > 0" class="mt-16">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Archivos Adjuntos</h2>
+      <ul class="list-disc pl-5 text-blue-600">
+        <li *ngFor="let file of post.attachments">
+          <a [href]="file.url" target="_blank" class="hover:underline">{{ file.name }}</a>
+        </li>
+      </ul>
     </div>
 
   </div>
